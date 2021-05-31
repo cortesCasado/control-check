@@ -12,6 +12,7 @@
 anonymous.shout.form.label.author = Autor:
 anonymous.shout.form.label.text = Texto:
 anonymous.shout.form.label.link = Información:
+employer.shout.form.label.infoSheet.money = Dinero:
 anonymous.shout.form.button.create = Gritar
 anonymous.shout.form.button.return = Volver
 
@@ -24,3 +25,4 @@ anonymous.shout.list.label.link = Información
 
 anonymous.shout.form.error.author = Nombre de Autor con Spam
 anonymous.shout.form.error.text = Este texto es Spam
+anonymous.shout.form.error.infoSheet.money = Divisa no permitida
