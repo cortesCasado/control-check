@@ -1,0 +1,34 @@
+manager.workplan.list.label.title = Title
+manager.workplan.list.label.execution_period_final_date = Execution period final date
+manager.workplan.list.label.execution_period_initial_date  = Execution period initial date
+manager.workplan.list.label.workload = Workload
+
+manager.workplan.form.button.return = Return
+manager.workplan.form.button.update = Update
+manager.workplan.form.button.create = Create
+manager.workplan.form.button.delete.task = Delete task
+manager.workplan.form.button.delete.actions = Actions
+manager.workplan.form.button.delete.workplan = Delete workplan
+manager.workplan.form.button.changePrivacytoPublic = Change privacy to public
+manager.workplan.form.button.changePrivacytoPrivate = Change privacy to private
+manager.workplan.form.button.error = Remember, a public workplan cannot contain private tasks!
+
+manager.workplan.form.error.initialDate = The initial date must be previous to the final date
+manager.workplan.form.error.finalDate = The final date must be after today
+manager.workplan.form.error.spam = A workplan must not contain that amount of spam words
+
+manager.workplan.form.label.title = Title
+manager.workplan.form.label.execution_period_final_date = Execution period final date
+manager.workplan.form.label.execution_period_initial_date  = Execution period initial date
+manager.workplan.form.label.workload = Workload
+manager.workplan.form.label.isPrivate = Private
+manager.workplan.form.label.privacy = Privacy
+manager.workplan.form.label.public = Public
+manager.workplan.form.label.private = Private
+manager.workplan.form.label.taskSelect = Select new task
+
+manager.workplan.form.label.suggested_execution_period_final_date = Suggested execution period final date:
+manager.workplan.form.label.suggested_execution_period_initial_date  = Suggested execution period initial date:
+
+manager.workplan.form.label.tareasseleccionadas = Tasks already in this workplan (
+manager.workplan.form.label.horas = hours of work )

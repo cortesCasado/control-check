@@ -1,0 +1,25 @@
+manager.task.list.label.title = Title
+manager.task.list.label.url = Link
+manager.task.list.label.description = Description
+manager.task.list.label.execution_period_final_date = Execution period final date
+manager.task.list.label.execution_period_initial_date  = Execution period initial date
+manager.task.list.label.isFinished = Is finished
+manager.task.list.label.isPrivate = Is Private
+manager.task.list.label.workload = workload
+manager.task.form.button.return = Return
+manager.task.form.button.update = Update
+manager.task.form.button.create = Create
+manager.task.form.button.update = Update
+manager.task.form.button.create = Create
+manager.task.form.label.delete = Delete
+
+manager.task.form.label.title = Title
+manager.task.form.label.url = Link
+manager.task.form.label.description = Description
+manager.task.form.label.execution_period_final_date = Execution period final date
+manager.task.form.label.execution_period_initial_date  = Execution period initial date
+manager.task.form.label.isFinished = Is finished
+manager.task.form.label.workload = Workload
+manager.task.form.label.update = Update
+manager.task.form.label.create = Create
+manager.task.form.label.isPrivate = Private

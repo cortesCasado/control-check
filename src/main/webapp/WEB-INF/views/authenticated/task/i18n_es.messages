@@ -1,0 +1,25 @@
+manager.task.list.label.title = Título
+manager.task.list.label.url = Enlace
+manager.task.list.label.description = Descripción
+manager.task.list.label.execution_period_final_date = Fecha final de ejecución
+manager.task.list.label.execution_period_initial_date  = Fecha inicial de ejecución
+manager.task.list.label.isFinished = Acabada
+manager.task.list.label.workload = Carga de trabajo
+manager.task.list.label.isPrivate = Es privada
+manager.task.form.button.return = Volver
+manager.task.form.button.update = Actualizar
+manager.task.form.button.create = Crear
+manager.task.form.button.update = Actualizar
+manager.task.form.button.create = Crear
+manager.task.form.label.delete = Borrar
+
+manager.task.form.label.title = Título
+manager.task.form.label.url = Enlace
+manager.task.form.label.description = Descripción
+manager.task.form.label.execution_period_final_date = Fecha final de ejecución
+manager.task.form.label.execution_period_initial_date  = Fecha inicial de ejecución
+manager.task.form.label.isFinished = Acabada
+manager.task.form.label.workload = Carga de trabajo
+manager.task.form.label.update = Actualizar
+manager.task.form.label.create = Crear
+manager.task.list.label.isPrivate = Privado

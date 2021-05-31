@@ -1,0 +1,44 @@
+administrator.dashboard.entities.title.show = Panel de indicadores
+
+administrator.dashboard.entities.title.general-indicators = Indicadores generales
+
+administrator.dashboard.entities.title.task-indicators = Indicadores sobre tareas
+
+administrator.dashboard.entities.title.workplan-indicators = Indicadores sobre planes de trabajo
+
+administrator.dashboard.entities.label.numberOfPublicTasks = Número de tareas públicas
+administrator.dashboard.entities.label.numberOfPrivateTasks =  Número de tareas privadas
+administrator.dashboard.entities.label.numberOfFinishedTasks = Número de tareas finalizadas
+administrator.dashboard.entities.label.numberOfNonFinishedTasks = Número de tareas no finalizadas
+
+administrator.dashboard.entities.label.averageOfTaskExecutionPeriods = Media del período de ejecución de tareas (en días)
+administrator.dashboard.entities.label.deviationOfTaskExecutionPeriods = Desviación del período de ejecución de tareas (en días)
+administrator.dashboard.entities.label.minOfTaskExecutionPeriods = Mínimo del período de ejecución de tareas (en días)
+administrator.dashboard.entities.label.maxOfTaskExecutionPeriods = Máximo del período de ejecución de tareas (en días)
+
+administrator.dashboard.entities.label.averageOfTaskWorkloads = Media de carga de trabajo de tareas (en horas)
+administrator.dashboard.entities.label.deviationOfTaskWorkloads = Desviación de carga de trabajo de tareas (en horas)
+administrator.dashboard.entities.label.minOfTaskWorkloads = Mínimo de carga de trabajo de tareas (en horas)
+administrator.dashboard.entities.label.maxOfTaskWorkloads = Máximo de carga de trabajo de tareas (en horas)
+
+administrator.dashboard.entities.label.numberOfPublicWorkPlans = Número de planes de trabajo públicos
+administrator.dashboard.entities.label.numberOfPrivateWorkPlans = Número de planes de trabajo privados
+administrator.dashboard.entities.label.numberOfFinishedWorkPlans = Número de planes de trabajo acabados
+administrator.dashboard.entities.label.numberOfNonFinishedWorkPlans = Número de planes de trabajo no acabados
+
+administrator.dashboard.entities.label.averageOfWorkPlanPeriods = Media del periodo de planes de trabajo (en días)
+administrator.dashboard.entities.label.deviationOfWorkPlanPeriods = Desviación del periodo de planes de trabajo (en días)
+administrator.dashboard.entities.label.minOfWorkPlanPeriods = Mínimo de los periodos de planes de trabajo (en días)
+administrator.dashboard.entities.label.maxOfWorkPlanPeriods = Máximo de los periodos de planes de trabajo (en días)
+
+administrator.dashboard.entities.label.averageOfWorkplanWorkloads = Media de carga de trabajo de planes de trabajo (en horas)
+administrator.dashboard.entities.label.deviationOfWorkplanWorkloads = Desviación de carga de trabajo de planes de trabajo (en horas)
+administrator.dashboard.entities.label.minOfWorkplanWorkloads = Mínimo de carga de trabajo de planes de trabajo (en horas)
+administrator.dashboard.entities.label.maxOfWorkplanWorkloads = Máximo de carga de trabajo de planes de trabajo (en horas)
+
+administrator.dashboard.entities.label.numberOfWorkPlans = Número de planes de trabajo
+administrator.dashboard.entities.label.numberOfPublishedWorkPlans = Planes de trabajo publicados
+administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Planes de trabajo no publicados
+
+administrator.dashboard.entities.title.application-statuses = Estado de la aplicación
+administrator.dashboard.entities.title.figcaption = Un diagrama de barras que muestra información acerca de la cantidad de planes de trabajo

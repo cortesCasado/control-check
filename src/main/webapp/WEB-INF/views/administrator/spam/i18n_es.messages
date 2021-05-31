@@ -1,0 +1,11 @@
+administrator.spam.form.title = Parámetros de personalización
+
+administrator.spam.form.label.threshold = Umbral:
+administrator.spam.form.label.spamWords = Palabras Spam:
+
+administrator.spamword.form.button.delete = Borrar
+administrator.spamword.form.button.update = Actualizar
+administrator.spamword.form.button.create = Crear nueva Palabra Spam
+
+administrator.spam.form.button.update = Actualizar
+administrator.spam.form.button.return = Volver

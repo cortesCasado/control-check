@@ -1,0 +1,41 @@
+administrator.dashboard.entities.title.show = Dashboard
+
+administrator.dashboard.entities.title.general-indicators = General indicators
+administrator.dashboard.entities.title.task-indicators = Task indicators
+administrator.dashboard.entities.title.workplan-indicators = Workplan indicators
+administrator.dashboard.entities.label.numberOfPublicTasks = Number of public tasks
+administrator.dashboard.entities.label.numberOfPrivateTasks =  Number of private tasks
+administrator.dashboard.entities.label.numberOfFinishedTasks = Number of finished tasks
+administrator.dashboard.entities.label.numberOfNonFinishedTasks = Number of non-finished tasks
+
+administrator.dashboard.entities.label.averageOfTaskExecutionPeriods = Average of task execution period (in days)
+administrator.dashboard.entities.label.deviationOfTaskExecutionPeriods = Deviation of task execution period (in days)
+administrator.dashboard.entities.label.minOfTaskExecutionPeriods = Minimum of task execution period (in days)
+administrator.dashboard.entities.label.maxOfTaskExecutionPeriods = Maximum of task execution period (in days)
+
+administrator.dashboard.entities.label.averageOfTaskWorkloads = Average of tasks Workload (in hours)
+administrator.dashboard.entities.label.deviationOfTaskWorkloads = Deviation of tasks workload (in hours)
+administrator.dashboard.entities.label.minOfTaskWorkloads = Minimum of tasks workload (in hours)
+administrator.dashboard.entities.label.maxOfTaskWorkloads = Maximum of task workload (in hours)
+
+administrator.dashboard.entities.label.numberOfPublicWorkPlans = Number of public Workplans
+administrator.dashboard.entities.label.numberOfPrivateWorkPlans = Number of private Workplans
+administrator.dashboard.entities.label.numberOfFinishedWorkPlans = Number of finished Workplans
+administrator.dashboard.entities.label.numberOfNonFinishedWorkPlans = Number of non-finished Workplans
+
+administrator.dashboard.entities.label.averageOfWorkPlanPeriods = Average of Workplan periods (in days)
+administrator.dashboard.entities.label.deviationOfWorkPlanPeriods = Deviation of Workplan periods (in days)
+administrator.dashboard.entities.label.minOfWorkPlanPeriods = Minimum of Workplan periods (in days)
+administrator.dashboard.entities.label.maxOfWorkPlanPeriods = Maximum of Workplan periods (in days)
+
+administrator.dashboard.entities.label.averageOfWorkplanWorkloads = Average of Workplan workload (in hours)
+administrator.dashboard.entities.label.deviationOfWorkplanWorkloads = Deviation of Workplan workload (in hours)
+administrator.dashboard.entities.label.minOfWorkplanWorkloads = Minimum of Workplan workload (in hours)
+administrator.dashboard.entities.label.maxOfWorkplanWorkloads = Maximum of Workplan workload (in hours)
+
+administrator.dashboard.entities.label.numberOfWorkPlans = Total amount of Workplans
+administrator.dashboard.entities.label.numberOfPublishedWorkPlans = Published Workplans
+administrator.dashboard.entities.label.numberOfNonPublishedWorkPlans = Non-published Workplans
+
+administrator.dashboard.entities.title.application-statuses = Application statuses
+administrator.dashboard.entities.title.figcaption = A bar diagram that shows information about the amount of workplans

@@ -1,0 +1,29 @@
+manager.task.list.label.title = Título
+manager.task.list.label.url = Enlace
+manager.task.list.label.description = Descripción
+manager.task.list.label.execution_period_final_date = Fecha final de ejecución
+manager.task.list.label.execution_period_initial_date  = Fecha inicial de ejecución
+manager.task.list.label.isFinished = Acabada
+manager.task.list.label.workload = Carga de trabajo
+manager.task.form.button.return = Volver
+manager.task.form.button.update = Actualizar
+manager.task.form.button.create = Crear
+manager.task.form.button.delete = Borrar
+
+manager.task.form.label.title = Título
+manager.task.form.label.url = Enlace
+manager.task.form.label.description = Descripción
+manager.task.form.label.execution_period_final_date = Fecha final de ejecución
+manager.task.form.label.execution_period_initial_date  = Fecha inicial de ejecución
+manager.task.form.label.isFinished = Acabada
+manager.task.form.label.workload = Carga de trabajo
+manager.task.form.label.isPrivate = Privada
+
+manager.task.form.error.initialDate = La fecha de inicio debe ser previa a la fecha de fin
+manager.task.form.error.finalDate = La fecha de fin debe ser posterior a la fecha de inicio
+manager.task.form.error.spam = Una tarea no puede tener tal cantidad de palabras prohibidas
+manager.task.form.error.workloadvacio = Workload no puede estar vacío ni ser negativo
+manager.task.form.error.workloaderroneo = El workload tiene que ser menor que el tiempo de ejecucion y mayor que 0
+manager.task.form.error.taskprivada = Una task no puede ser privada si pertenece a un workplan público
+
+manager.task.form.label.DatePlaceHolder = dd/MM/YYYY hh:mm 
