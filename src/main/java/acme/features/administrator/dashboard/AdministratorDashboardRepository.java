@@ -13,22 +13,22 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
 	//Control check
-	@Query("SELECT COUNT(u) FROM Shout u WHERE u.infoSheet.flag = true")
+	@Query("SELECT COUNT(s) FROM Shout s WHERE s.infoSheet.flag = true")
 	Integer flaggedAs();
 
-	@Query("SELECT COUNT(u) FROM Shout u WHERE u.infoSheet.money >= 500")
+	@Query("SELECT COUNT(s) FROM Shout s WHERE s.infoSheet.money.amount >= 500")
 	Double ratioOfShouts();
 
-	@Query("SELECT AVG(u) FROM Shout u WHERE u.infoSheet.money.currency = 'EUR'")
+	@Query("SELECT AVG(s) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
 	Double avgMoneyCurrency1();
 
-	@Query("SELECT DVT(u) FROM Shout u WHERE u.infoSheet.money.currency = 'EUR'")
+	@Query("SELECT DVT(s) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
 	Double dvtMoneyCurrency1();
 
-	@Query("SELECT AVG(u) FROM Shout u WHERE u.infoSheet.money.currency = 'USD'")
+	@Query("SELECT AVG(s) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
 	Double avgMoneyCurrency2();
 
-	@Query("SELECT DVT(u) FROM Shout u WHERE u.infoSheet.money.currency = 'USD'")
+	@Query("SELECT STDDEV(s) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
 	Double dvtMoneyCurrency2();
 	
 	

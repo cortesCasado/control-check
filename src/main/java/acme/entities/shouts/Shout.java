@@ -30,6 +30,12 @@ public class Shout extends DomainEntity {
 	@NotNull
 	@Valid
 	protected Info				infoSheet;
+	
+	
+	
+	
+	
+	
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past

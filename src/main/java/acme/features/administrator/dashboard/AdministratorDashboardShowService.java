@@ -36,7 +36,20 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert entity != null;
 		assert model != null;
 		
-		request.unbind(entity, model, 
+		request.unbind(entity, model,
+			
+			"flaggedAs",
+			"ratioOfShouts",
+		
+			"avgMoneyCurrency1",
+			"dvtMoneyCurrency1",
+		
+			"avgMoneyCurrency2",
+			"dvtMoneyCurrency2",
+			
+			
+			
+			
 			"numberOfPublicTasks", 
 			"numberOfPrivateTasks", 
 			"numberOfFinishedTasks", 
@@ -77,6 +90,23 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		assert request != null;
 
 		final Dashboard result = new Dashboard();
+		
+		//Control check
+		
+		result.setFlaggedAs(this.repository.flaggedAs());
+		result.setRatioOfShouts(this.repository.ratioOfShouts());
+		
+		result.setAvgMoneyCurrency1(this.repository.avgMoneyCurrency1());
+		result.setDvtMoneyCurrency1(this.repository.dvtMoneyCurrency1());
+		
+		result.setAvgMoneyCurrency2(this.repository.avgMoneyCurrency2());
+		result.setDvtMoneyCurrency2(this.repository.dvtMoneyCurrency2());
+		
+
+		
+		
+		
+		
 
 		final List<Task> allTasks = this.repository.findTasks();
 		final int numberOfTasks = allTasks.size();

@@ -41,6 +41,64 @@
 </style>
 
 <h3>
+	<acme:message code="administrator.dashboard.entities.title.shouts-indicators"/>
+</h3>
+
+<table class="table table-sm">
+		
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.flaggedAs"/>
+		</th>
+		<td>
+			<acme:print value="${flaggedAs}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.ratioOfShouts"/>
+		</th>
+		<td>
+			<acme:print value="${ratioOfShouts}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.avgMoneyCurrency1"/>
+		</th>
+		<td>
+			<acme:print value="${avgMoneyCurrency1}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.dvtMoneyCurrency1"/>
+		</th>
+		<td>
+			<acme:print value="${dvtMoneyCurrency1}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.avgMoneyCurrency2"/>
+		</th>
+		<td>
+			<acme:print value="${avgMoneyCurrency2}"/>
+		</td>
+	</tr>
+	<tr>
+		<th scope="row">
+			<acme:message code="administrator.dashboard.entities.label.dvtMoneyCurrency2"/>
+		</th>
+		<td>
+			<acme:print value="${dvtMoneyCurrency2}"/>
+		</td>
+	</tr>
+</table>
+
+
+
+<h3>
 		<acme:message code="administrator.dashboard.entities.title.task-indicators"/>
 </h3>
 

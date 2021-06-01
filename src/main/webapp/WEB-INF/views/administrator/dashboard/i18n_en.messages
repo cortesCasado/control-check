@@ -1,5 +1,30 @@
 administrator.dashboard.entities.title.show = Dashboard
 
+
+administrator.dashboard.entities.title.shouts-indicators = Shout indicators
+
+administrator.dashboard.entities.title.flaggedAs = Shouts flagged as 
+administrator.dashboard.entities.title.ratioOfShouts = Ratio of shouts whose
+
+administrator.dashboard.entities.label.avgMoneyCurrency1 = Average EUR associated to shouts 
+administrator.dashboard.entities.label.dvtMoneyCurrency1 =  Standard deviation EUR associated to shouts
+
+administrator.dashboard.entities.label.avgMoneyCurrency2 = Average USD associated to shouts 
+administrator.dashboard.entities.label.dvtMoneyCurrency2 = Standard deviation USD associated to shouts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 administrator.dashboard.entities.title.general-indicators = General indicators
 administrator.dashboard.entities.title.task-indicators = Task indicators
 administrator.dashboard.entities.title.workplan-indicators = Workplan indicators
