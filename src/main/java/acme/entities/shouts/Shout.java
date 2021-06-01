@@ -4,6 +4,7 @@ package acme.entities.shouts;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -14,7 +15,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.datatypes.Info;
+import acme.entities.info.Info;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,16 +28,12 @@ public class Shout extends DomainEntity {
 	protected static final long	serialVersionUID	= 1L;
 	
 	//Control check
+
 	@NotNull
 	@Valid
+	@OneToOne(mappedBy = "shout")
 	protected Info				infoSheet;
 	
-	
-	
-	
-	
-	
-
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull

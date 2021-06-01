@@ -59,7 +59,7 @@
 			<acme:message code="administrator.dashboard.entities.label.ratioOfShouts"/>
 		</th>
 		<td>
-			<acme:print value="${ratioOfShouts}"/>
+			<acme:print value="${ratioOfShouts}%"/>
 		</td>
 	</tr>
 	<tr>

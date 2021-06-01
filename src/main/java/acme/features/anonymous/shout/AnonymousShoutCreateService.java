@@ -1,4 +1,3 @@
-
 package acme.features.anonymous.shout;
 
 import java.util.Date;
@@ -8,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import acme.components.Spam.AnonymousSpamRepository;
 import acme.components.Spam.Spam1;
-import acme.datatypes.Info;
+import acme.entities.info.Info;
 import acme.entities.shouts.Shout;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -71,7 +70,9 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		infoSheet.setMoment(moment);
 		infoSheet.setFlag(Boolean.TRUE);
 		infoSheet.setRareID(moment.toString());
+		
 		result.setInfoSheet(infoSheet);
+		infoSheet.setShout(result);
 
 		return result;
 
@@ -82,6 +83,19 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+		
+		final Money m = entity.getInfoSheet().getMoney();
+		
+		if (m != null) {
+			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
+			errors.state(request, notAllowedCurrency, "infoSheet.money", "anonymous.shout.form.error.infoSheet.money");
+		}
+		
+		
+		
+		
+		
+		
 
 		if (!entity.getAuthor().isEmpty()) {
 			final boolean condition1 = !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());
@@ -93,13 +107,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			errors.state(request, condition2, "text", "anonymous.shout.form.error.text");
 		}
 		
-		final Money m = entity.getInfoSheet().getMoney();
-		
-		if (m != null) {
-			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
-			errors.state(request, notAllowedCurrency, "infoSheet.money", "anonymous.shout.form.error.infoSheet.money");
-		}
-
 	}
 
 	@Override
@@ -112,6 +119,8 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		entity.setMoment(moment);
 
 		this.shoutRepository.save(entity);
+		this.shoutRepository.save(entity.getInfoSheet());
+		
 
 	}
 

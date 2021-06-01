@@ -11,5 +11,7 @@ public interface AnonymousShoutRepository extends AbstractRepository {
 	
 	@Query("select s from Shout s")
 	Collection<Shout> findMany();
+	
+	
 
 }

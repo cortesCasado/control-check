@@ -8,11 +8,20 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+anonymous.shout.list.label.infoSheet.rareID = RareID:
+anonymous.shout.list.label.infoSheet.moment = Moment:
+anonymous.shout.list.label.infoSheet.money = Money:
+anonymous.shout.list.label.infoSheet.flag = Flag:
+
+
+
+
+
+
 
 anonymous.shout.form.label.author = Author:
 anonymous.shout.form.label.text = Text:
 anonymous.shout.form.label.link = Info:
-employer.shout.form.label.infoSheet.money = Money:
 anonymous.shout.form.button.create = Shout!
 anonymous.shout.form.button.return = Return
 

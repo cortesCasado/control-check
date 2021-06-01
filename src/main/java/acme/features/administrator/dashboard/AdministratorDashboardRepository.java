@@ -12,24 +12,28 @@ import acme.framework.repositories.AbstractRepository;
 
 @Repository
 public interface AdministratorDashboardRepository extends AbstractRepository {
+	
 	//Control check
+	
 	@Query("SELECT COUNT(s) FROM Shout s WHERE s.infoSheet.flag = true")
 	Integer flaggedAs();
 
-	@Query("SELECT COUNT(s) FROM Shout s WHERE s.infoSheet.money.amount >= 500")
+	@Query("SELECT 100.00 * COUNT(s) / (SELECT COUNT(z) FROM Shout z) FROM Shout s WHERE s.infoSheet.money.amount >= 500")
 	Double ratioOfShouts();
 
-	@Query("SELECT AVG(s) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
+	@Query("SELECT AVG(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
 	Double avgMoneyCurrency1();
 
-	@Query("SELECT DVT(s) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
+	@Query("SELECT STDDEV(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
 	Double dvtMoneyCurrency1();
 
-	@Query("SELECT AVG(s) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
+	@Query("SELECT AVG(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
 	Double avgMoneyCurrency2();
 
-	@Query("SELECT STDDEV(s) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
+	@Query("SELECT STDDEV(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
 	Double dvtMoneyCurrency2();
+	
+
 	
 	
 
@@ -103,27 +107,6 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("SELECT STDDEV(w.executionPeriod.finalDate - w.executionPeriod.initialDate) FROM Workplan w")
 	Double deviationOfWorkplanExecutionPeriods();
 
-	//About workplan workload
-
-	//	@Query("SELECT AVG(t.workload) FROM Task t GROUP BY t.workplan")
-	//	Double averageOfWorkplanWorkloads();
-	//	
-	//	@Query("SELECT STDDEV"
-	//		+ "(SELECT SUM(t) FROM Task t WHERE t.workplan = w)"
-	//		+ " FROM Workplan w")
-	//	Double deviationOfWorkplanWorkloads();
-	//	
-	//	@Query("SELECT MIN"
-	//		+ "(SELECT SUM(t) FROM Task t WHERE t.workplan = w)"
-	//		+ "FROM Workplan w")
-	//	Double minOfWorkplanWorkloads();
-	//	
-	//	@Query("SELECT MAX"
-	//		+ "(SELECT Task t FROM Task t, Workplan w GROUP BY w)"
-	//		+ "FROM Task t, Workplan w"
-	//		+ "Group by w")
-	//	Double maxOfWorkplanWorkloads();
-
 	//Chart 
 
 	@Query("SELECT w FROM Workplan w")
@@ -132,10 +115,5 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("SELECT t FROM Task t")
 	List<Task> findTasks();
 
-	//	@Query("SELECT COUNT(w) FROM Workplan w WHERE w.isPublished = true")
-	//	Integer totalNumberOfPublishedWorkplans();
-	//	
-	//	@Query("SELECT COUNT(w) FROM Workplan w WHERE w.isPublished = false")
-	//	Integer totalNumberOfNonPublishedWorkplans();
 
 }

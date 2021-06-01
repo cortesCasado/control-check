@@ -1,22 +1,26 @@
-package acme.datatypes;
+package acme.entities.info;
 
 import java.util.Calendar;
 import java.util.Date;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 
-import acme.framework.datatypes.DomainDatatype;
+import acme.entities.shouts.Shout;
 import acme.framework.datatypes.Money;
+import acme.framework.entities.DomainEntity;
 import lombok.Getter;
+import lombok.Setter;
 
-@Embeddable
+@Entity
 @Getter
-public class Info extends DomainDatatype {
+@Setter
+public class Info extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -24,7 +28,8 @@ public class Info extends DomainDatatype {
 
 	// Attributes -------------------------------------------------------------
 	
-	@Id
+	@NotNull
+	@Column(unique = true)
 	protected String	rareID;
 	
 	@Temporal(TemporalType.TIMESTAMP)
@@ -39,11 +44,6 @@ public class Info extends DomainDatatype {
 	protected Boolean			flag;
 
 	
-	public void setRareID(String rareID) {
-		this.rareID = rareID;
-	}
-
-	
 	public void setMoment(Date moment) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(moment);
@@ -51,20 +51,13 @@ public class Info extends DomainDatatype {
 		this.moment = c.getTime();
 	}
 
-	
-	public void setMoney(Money money) {
-		this.money = money;
-	}
-
-	
-	public void setFlag(Boolean flag) {
-		this.flag = flag;
-	}
-	
-	
-
 	// Derived attributes -----------------------------------------------------
 
 	// Relationships ----------------------------------------------------------
+	
+	@NotNull
+	@Valid
+	@OneToOne
+	protected Shout shout;
 
 }

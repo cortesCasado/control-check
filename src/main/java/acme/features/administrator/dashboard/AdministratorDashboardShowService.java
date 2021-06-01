@@ -101,13 +101,15 @@ public class AdministratorDashboardShowService implements AbstractShowService<Ad
 		
 		result.setAvgMoneyCurrency2(this.repository.avgMoneyCurrency2());
 		result.setDvtMoneyCurrency2(this.repository.dvtMoneyCurrency2());
-		
-
-		
+	
 		
 		
 		
-
+		
+		
+		
+		
+		
 		final List<Task> allTasks = this.repository.findTasks();
 		final int numberOfTasks = allTasks.size();
 
