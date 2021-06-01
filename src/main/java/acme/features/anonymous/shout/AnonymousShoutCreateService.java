@@ -69,7 +69,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		
 		Info infoSheet = new Info();
 		infoSheet.setMoment(moment);
-		infoSheet.setFinalMode(Boolean.TRUE);
+		infoSheet.setFlag(Boolean.TRUE);
 		infoSheet.setRareID(moment.toString());
 		result.setInfoSheet(infoSheet);
 

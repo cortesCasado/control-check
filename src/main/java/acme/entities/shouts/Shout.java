@@ -25,6 +25,11 @@ import lombok.Setter;
 public class Shout extends DomainEntity {
 
 	protected static final long	serialVersionUID	= 1L;
+	
+	//Control check
+	@NotNull
+	@Valid
+	protected Info				infoSheet;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
@@ -42,8 +47,6 @@ public class Shout extends DomainEntity {
 	@URL
 	protected String			link;
 	
-	@NotNull
-	@Valid
-	protected Info				infoSheet;
+	
 
 }

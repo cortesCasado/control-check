@@ -36,7 +36,7 @@ public class Info extends DomainDatatype {
 	protected Money				money;
 
 	@NotNull
-	protected Boolean			finalMode;
+	protected Boolean			flag;
 
 	
 	public void setRareID(String rareID) {
@@ -57,8 +57,8 @@ public class Info extends DomainDatatype {
 	}
 
 	
-	public void setFinalMode(Boolean finalMode) {
-		this.finalMode = finalMode;
+	public void setFlag(Boolean flag) {
+		this.flag = flag;
 	}
 	
 	

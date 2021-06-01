@@ -14,15 +14,25 @@ public class Dashboard implements Serializable {
 	protected static final long	serialVersionUID	= 1L;
 
 	// Attributes -------------------------------------------------------------
+
+	//Control check
+	
+	Integer flaggedAs;
+	Double ratioOfShouts;
+	
+	Double 	avgMoneyCurrency1;
+	Double 	dvtMoneyCurrency1;
+	
+	Double 	avgMoneyCurrency2;
+	Double 	dvtMoneyCurrency2;
+	
+
+	
+	
 	Integer numberOfPublicTasks;
 	Integer numberOfPrivateTasks;
 	Integer numberOfFinishedTasks;
 	Integer numberOfNonFinishedTasks;
-	
-	Integer numberOfPublicWorkplans;
-	Integer numberOfPrivateWorkplans;
-	Integer numberOfFinishedWorkplans;
-	Integer numberOfNonFinishedWorkplans;
 	
 	Double 	minWorkloadTasks;
 	Double 	maxWorkloadTasks;
@@ -33,6 +43,11 @@ public class Dashboard implements Serializable {
 	Long 	maxExecutionPeriodTasks;
 	Double 	avgExecutionPeriodTasks;
 	Double 	dvtExecutionPeriodTasks;
+	
+	Integer numberOfPublicWorkplans;
+	Integer numberOfPrivateWorkplans;
+	Integer numberOfFinishedWorkplans;
+	Integer numberOfNonFinishedWorkplans;
 	
 	Double 	minWorkloadWorkplans;
 	Double 	maxWorkloadWorkplans;
@@ -47,4 +62,5 @@ public class Dashboard implements Serializable {
 	Integer totalNumberOfWorkplans;
 	Long totalNumberOfPublishedWorkplans;
 	Long totalNumberOfNonPublishedWorkplans;
+	
 }
