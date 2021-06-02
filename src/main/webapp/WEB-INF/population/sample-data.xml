@@ -255,7 +255,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-	<ref bean="workplan4" />
+				<ref bean="workplan4" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -289,7 +289,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-<ref bean="workplan12" />
+				<ref bean="workplan12" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -321,7 +321,7 @@
 		<property name="isPrivate" value="false" />
 		<property name="workplan">
 			<list>
-<ref bean="workplan2" />
+				<ref bean="workplan2" />
 			</list>
 		</property>
 		<property name="userAccount" ref="managerSergio" />
@@ -766,12 +766,12 @@
 		</property>
 		<property name="userAccount" ref="managerSergio" />
 	</bean>
-	
+
 	<bean id="workplan14Ex" class="acme.datatypes.ExecutionPeriod">
 		<property name="initialDate" value="5/11/21 8:15 AM" />
 		<property name="finalDate" value="9/8/22 5:57 PM" />
 	</bean>
-	
+
 	<bean id="workplan15" class="acme.entities.workplan.Workplan">
 		<property name="title" value="Workplan 15" />
 		<property name="executionPeriod" ref="finalizado1" />
@@ -783,11 +783,62 @@
 		<property name="userAccount" ref="managerSergio" />
 	</bean>
 
-	
+
 
 	<!-- Shout -->
+	
+	<bean id="shout01" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/06/13 19:39"/>
+		<property name="author" value="Alvaro Cortés"/>
+		<property name="text" value="Using new info sheet property with EUR"/>
+		<property name="link"><null/></property>
+		<property name="infoSheet" ref="infoSheet01"/>
+	</bean>
+	
+	<bean id="shout02" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/06/13 19:40"/>
+		<property name="author" value="Alvaro Cortés"/>
+		<property name="text" value="Using new info sheet property with EUR"/>
+		<property name="link"><null/></property>
+		<property name="infoSheet" ref="infoSheet02" />
+	</bean>
+	
+	<bean id="shout03" class="acme.entities.shouts.Shout">
+		<property name="moment" value="2021/06/13 19:41"/>
+		<property name="author" value="Alvaro Cortés"/>
+		<property name="text" value="Using new info sheet property with USD"/>
+		<property name="link"><null/></property>
+		<property name="infoSheet" ref="infoSheet03" />
+	</bean>
 
+	<!-- InfoSheet -->
 
+	<bean name="infoSheet01"
+		class="acme.entities.info.Info">
+		<property name="rareID" value="2021/02/13 19:39"/>
+		<property name="moment" value="2021/02/14 19:39"/>
+		<property name="money" value="EUR 100.98"/>
+		<property name="flag" value="true"/>
+		<property name="shout" ref="shout01"/>
+	</bean>
+	
+	<bean name="infoSheet02"
+		class="acme.entities.info.Info">
+		<property name="rareID" value="2021/02/13 19:40"/>
+		<property name="moment" value="2021/02/14 19:39"/>
+		<property name="money" value="EUR 500.98"/>
+		<property name="flag" value="true"/>
+		<property name="shout" ref="shout02"/>
+	</bean>
+	
+	<bean name="infoSheet03"
+		class="acme.entities.info.Info">
+		<property name="rareID" value="2021/02/13 19:41"/>
+		<property name="moment" value="2021/02/14 19:39"/>
+		<property name="money" value="USD 700.98"/>
+		<property name="flag" value="false"/>
+		<property name="shout" ref="shout03"/>
+	</bean>
 
 	<!-- UserAccount -->
 
