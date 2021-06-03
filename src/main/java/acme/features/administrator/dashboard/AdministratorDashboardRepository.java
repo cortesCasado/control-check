@@ -15,22 +15,22 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//Control check
 	
-	@Query("SELECT COUNT(s) FROM Shout s WHERE s.infoSheet.flag = true")
+	@Query("SELECT COUNT(i) FROM Info i WHERE i.flag = true")
 	Integer flaggedAs();
 
-	@Query("SELECT 100.00 * COUNT(s) / (SELECT COUNT(z) FROM Shout z) FROM Shout s WHERE s.infoSheet.money.amount >= 500")
+	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM Info j) FROM Info i WHERE i.money.amount >= 500 AND i.money.currency = 'EUR'")
 	Double ratioOfShouts();
 
-	@Query("SELECT AVG(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
+	@Query("SELECT AVG(i.money.amount) FROM Info i WHERE i.money.currency = 'EUR'")
 	Double avgMoneyCurrency1();
 
-	@Query("SELECT STDDEV(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'EUR'")
+	@Query("SELECT STDDEV(i.money.amount) FROM Info i WHERE i.money.currency = 'EUR'")
 	Double dvtMoneyCurrency1();
 
-	@Query("SELECT AVG(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
+	@Query("SELECT AVG(i.money.amount) FROM Info i WHERE i.money.currency = 'USD'")
 	Double avgMoneyCurrency2();
 
-	@Query("SELECT STDDEV(s.infoSheet.money.amount) FROM Shout s WHERE s.infoSheet.money.currency = 'USD'")
+	@Query("SELECT STDDEV(i.money.amount) FROM Info i WHERE i.money.currency = 'USD'")
 	Double dvtMoneyCurrency2();
 	
 

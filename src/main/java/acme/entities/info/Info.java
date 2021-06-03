@@ -9,7 +9,9 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import acme.entities.shouts.Shout;
 import acme.framework.datatypes.Money;
@@ -28,8 +30,9 @@ public class Info extends DomainEntity {
 
 	// Attributes -------------------------------------------------------------
 	
-	@NotNull
+	@NotBlank
 	@Column(unique = true)
+	@Pattern(regexp = "[0-3]{1}[0-9]{1}-[0-1]{1}[0-9]{1}-[0-9]{4} [0-9]{2}", message = "Error")
 	protected String	rareID;
 	
 	@Temporal(TemporalType.TIMESTAMP)

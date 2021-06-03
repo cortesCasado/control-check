@@ -1,7 +1,8 @@
-author,text,link
-Lucia Nieto,¡soy una super programadora!,http://lucianieto.org
+id,version,author,text, link, infoSheet_rareID, infoSheet_moment, infoSheet_money, infoSheet_flag
+Lucia Nieto,¡soy una super programadora!,http://lucianieto.org,
 Jose Luis Garcia,¡me encanta el software!,
-Antonio Buendia,Diseño y pruebas es mi asignatura favorita,http://antonio.org
+Antonio Buendia,Diseño y pruebas es mi asignatura favorita,http://antonio.org,
 Manuela Gomez,soy analista,
 Joaquin Neva,¡Soy manager desde hace 10 años!,
 Francisco Lopez,Mi pasión es la mezcla software-hardware,
+ 

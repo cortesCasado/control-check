@@ -34,6 +34,11 @@ public class Shout extends DomainEntity {
 	@OneToOne(mappedBy = "shout")
 	protected Info				infoSheet;
 	
+	
+	
+	
+	
+	
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull

@@ -1,5 +1,7 @@
+
 package acme.features.anonymous.shout;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +50,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "author", "text", "link", "infoSheet.money");
+		Calendar c = Calendar.getInstance();
+		c.setTime(entity.getMoment());
+
+		model.setAttribute("rareIdPlaceholder", this.getReferenceRegExp(c, "-"));
+
+		request.unbind(entity, model, "author", "text", "link", "infoSheet.rareID", "infoSheet.moment", "infoSheet.money", "infoSheet.flag");
 	}
 
 	@Override
@@ -65,12 +72,11 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		result.setText("");
 		result.setMoment(moment);
 		result.setLink("");
-		
+
 		Info infoSheet = new Info();
-		infoSheet.setMoment(moment);
-		infoSheet.setFlag(Boolean.TRUE);
-		infoSheet.setRareID(moment.toString());
-		
+		infoSheet.setFlag(Boolean.FALSE);
+		//		infoSheet.setMoment(moment);
+
 		result.setInfoSheet(infoSheet);
 		infoSheet.setShout(result);
 
@@ -83,19 +89,34 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		
-		final Money m = entity.getInfoSheet().getMoney();
-		
+
+		final Info infoSheet = entity.getInfoSheet();
+
+		Money m = infoSheet.getMoney();
+
 		if (m != null) {
 			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
 			errors.state(request, notAllowedCurrency, "infoSheet.money", "anonymous.shout.form.error.infoSheet.money");
 		}
-		
-		
-		
-		
-		
-		
+
+		String s = infoSheet.getRareID();
+
+		if (s != null) {
+			Calendar c = Calendar.getInstance();
+			c.setTime(entity.getMoment());
+			
+			String regExp = this.getReferenceRegExp(c, "-"); 
+			
+			final boolean matchRegExp = s.matches(regExp);
+			errors.state(request, matchRegExp, "infoSheet.rareID", "anonymous.shout.form.error.infoSheet.rareIdRegExp");
+
+			if (!matchRegExp) {
+				request.getModel().setAttribute("rareIdPlaceholder", regExp);
+			}
+
+			final boolean uniqueId = this.shoutRepository.findRareIDs().stream().noneMatch(r -> r.equals(s));
+			errors.state(request, uniqueId, "infoSheet.rareID", "anonymous.shout.form.error.infoSheet.rareIdUnique");
+		}
 
 		if (!entity.getAuthor().isEmpty()) {
 			final boolean condition1 = !Spam1.isSpam(entity.getAuthor(), this.spamRepository.findSpam());
@@ -106,7 +127,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			final boolean condition2 = !Spam1.isSpam(entity.getText(), this.spamRepository.findSpam());
 			errors.state(request, condition2, "text", "anonymous.shout.form.error.text");
 		}
-		
+
 	}
 
 	@Override
@@ -120,8 +141,26 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		this.shoutRepository.save(entity);
 		this.shoutRepository.save(entity.getInfoSheet());
-		
 
+	}
+
+	private String getReferenceRegExp(Calendar c, String separator) {
+		String day = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+		String month = String.valueOf(c.get(Calendar.MONTH) + 1);
+		String year = String.valueOf(c.get(Calendar.YEAR));
+
+		if (day.length() == 1)
+			day = "0" + day;
+		if (month.length() == 1)
+			month = "0" + month;
+
+		StringBuilder bld = new StringBuilder(year);
+		for (int i = year.length(); i < 4; ++i) {
+			bld.insert(0, "0");
+		}
+		year = bld.toString();
+
+		return day + separator + month + separator + year + " [0-9]{2}";
 	}
 
 }

@@ -15,6 +15,17 @@ anonymous.shout.list.label.infoSheet.flag = Bandera:
 
 
 
+anonymous.shout.form.label.infoSheet.rareID = RareID:
+anonymous.shout.form.label.infoSheet.moment = Momento:
+anonymous.shout.form.label.infoSheet.money = Dinero:
+anonymous.shout.form.label.infoSheet.flag = Bandera
+
+
+anonymous.shout.form.error.infoSheet.money = Divisa no permitida
+anonymous.shout.form.error.infoSheet.rareIdRegExp = La refencia debe encajar con el patrón proporcionado
+anonymous.shout.form.error.infoSheet.rareIdUnique = No pueden existir dos referencias iguales
+
+
 
 
 
@@ -22,7 +33,6 @@ anonymous.shout.list.label.infoSheet.flag = Bandera:
 anonymous.shout.form.label.author = Autor:
 anonymous.shout.form.label.text = Texto:
 anonymous.shout.form.label.link = Información:
-employer.shout.form.label.infoSheet.money = Dinero:
 anonymous.shout.form.button.create = Gritar
 anonymous.shout.form.button.return = Volver
 
@@ -35,4 +45,3 @@ anonymous.shout.list.label.link = Información
 
 anonymous.shout.form.error.author = Nombre de Autor con Spam
 anonymous.shout.form.error.text = Este texto es Spam
-anonymous.shout.form.error.infoSheet.money = Divisa no permitida

@@ -14,7 +14,10 @@ anonymous.shout.list.label.infoSheet.money = Money:
 anonymous.shout.list.label.infoSheet.flag = Flag:
 
 
-
+anonymous.shout.form.label.infoSheet.rareID = RareID:
+anonymous.shout.form.label.infoSheet.moment = Moment:
+anonymous.shout.form.label.infoSheet.money = Money:
+anonymous.shout.form.label.infoSheet.flag = Flag
 
 
 
@@ -36,3 +39,5 @@ anonymous.shout.list.label.link = Info
 anonymous.shout.form.error.author = Author's name contains Spam
 anonymous.shout.form.error.text = This text contains Spam
 anonymous.shout.form.error.infoSheet.money = Currency not allowed
+anonymous.shout.form.error.infoSheet.rareIdRegExp = Reference must match the placeholder pattern
+anonymous.shout.form.error.infoSheet.rareIdUnique = Cannot exist two info sheets with same reference
