@@ -22,8 +22,7 @@ public class Spam1 {
 	}
 
 	public static boolean isSpam(final String text, final List<Spam> spam) {
-		final List<SpamWord> palabras = spam.get(0).getSpamWords().stream().collect(Collectors.toList());
-		if (StringHelper.isBlank(text) || palabras.isEmpty()) {
+		if (StringHelper.isBlank(text) || spam.isEmpty()) {
 			return false;
 		}
 
@@ -33,6 +32,7 @@ public class Spam1 {
 		String texto = text;
 		Double contador = 0.0;
 
+		final List<SpamWord> palabras = spam.get(0).getSpamWords().stream().collect(Collectors.toList());
 		for (int i = 0; i < palabras.size(); i++) {
 			final String palabra = palabras.get(i).getWord();
 
