@@ -22,13 +22,13 @@ public class Spam1 {
 	}
 
 	public static boolean isSpam(final String text, final List<Spam> spam) {
-		if (StringHelper.isBlank(text)) {
+		final List<SpamWord> palabras = spam.get(0).getSpamWords().stream().collect(Collectors.toList());
+		if (StringHelper.isBlank(text) || palabras.isEmpty()) {
 			return false;
 		}
-		
+
 		boolean salida = true;
 		final StringTokenizer st = new StringTokenizer(text);
-		final List<SpamWord> palabras = spam.get(0).getSpamWords().stream().collect(Collectors.toList());
 
 		String texto = text;
 		Double contador = 0.0;
