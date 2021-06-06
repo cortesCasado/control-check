@@ -1,2 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-04 02:36:45.384,acme.testing.anonymous.shout.AnonymousShoutCreateTest,createPositive,30956,"[1] id=0, version=0, moment=2021/06/04 02:13, author=First Creator, text=Texto con EUR sin enlace con flag true, info=null, infoSheet_rareID=04-06-2021 09, infoSheet_moment=2021/02/15 19:39, infoSheet_money=EUR 300.98, infoSheet_flag=true",Expected value '2021/02/15 19:39' in attribute 5 of record 0, but found '2021/02/16 19:39'

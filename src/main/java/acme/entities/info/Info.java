@@ -26,14 +26,14 @@ public class Info extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
-	protected static final long	serialVersionUID	= 1L;
+	protected static final long	serialVersionUID = 1L;
 
 	// Attributes -------------------------------------------------------------
 	
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-3]{1}[0-9]{1}-[0-1]{1}[0-9]{1}-[0-9]{4} [0-9]{2}", message = "Error")
-	protected String	rareID;
+	protected String			rareID;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
@@ -62,5 +62,7 @@ public class Info extends DomainEntity {
 	@Valid
 	@OneToOne
 	protected Shout shout;
+	
+	
 
 }

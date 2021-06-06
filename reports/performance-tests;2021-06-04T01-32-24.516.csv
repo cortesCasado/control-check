@@ -1,3 +1,0 @@
-timestamp,test-class,test-method,time,description,result
-2021-06-04 01:32:45.767,acme.testing.administrator.dashboard.DashboardShowTest,showPositive,5868,"showPositive()",OK
-2021-06-04 01:32:46.766,acme.testing.administrator.dashboard.DashboardShowTest,showNegative,547,"showNegative()",OK

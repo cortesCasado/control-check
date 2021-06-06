@@ -26,19 +26,14 @@ import lombok.Setter;
 public class Shout extends DomainEntity {
 
 	protected static final long	serialVersionUID	= 1L;
-	
+
 	//Control check
 
 	@NotNull
 	@Valid
 	@OneToOne(mappedBy = "shout")
 	protected Info				infoSheet;
-	
-	
-	
-	
-	
-	
+
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
 	@NotNull
@@ -54,7 +49,16 @@ public class Shout extends DomainEntity {
 
 	@URL
 	protected String			link;
-	
-	
+
+
+	@Override
+	public String toString() {
+		return this.id + "," + this.version + "," + 
+	this.moment + "," + this.author + "," + this.text + "," + this.link + "," + 
+			
+	this.infoSheet.getRareID() + "," + this.infoSheet.getMoment().toString() + "," + 
+	this.infoSheet.getMoney().getCurrency() + " " + this.infoSheet.getMoney().getAmount() + "," + 
+	this.infoSheet.getFlag();
+	}
 
 }
