@@ -15,22 +15,22 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//Control check
 	
-	@Query("SELECT COUNT(i) FROM Info i WHERE i.flag = true")
-	Integer flaggedAs();
+	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM Receipt j) FROM Receipt i WHERE i.flag = true")
+	Double flaggedAs();
 
-	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM Info j) FROM Info i WHERE i.money.amount >= 500 AND i.money.currency = 'EUR'")
+	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM Receipt j) FROM Receipt i WHERE i.money.amount >= 500 AND i.money.currency = 'EUR'")
 	Double ratioOfShouts();
 
-	@Query("SELECT AVG(i.money.amount) FROM Info i WHERE i.money.currency = 'EUR'")
+	@Query("SELECT AVG(i.money.amount) FROM Receipt i WHERE i.money.currency = 'EUR'")
 	Double avgMoneyCurrency1();
 
-	@Query("SELECT STDDEV(i.money.amount) FROM Info i WHERE i.money.currency = 'EUR'")
+	@Query("SELECT STDDEV(i.money.amount) FROM Receipt i WHERE i.money.currency = 'EUR'")
 	Double dvtMoneyCurrency1();
 
-	@Query("SELECT AVG(i.money.amount) FROM Info i WHERE i.money.currency = 'USD'")
+	@Query("SELECT AVG(i.money.amount) FROM Receipt i WHERE i.money.currency = 'USD'")
 	Double avgMoneyCurrency2();
 
-	@Query("SELECT STDDEV(i.money.amount) FROM Info i WHERE i.money.currency = 'USD'")
+	@Query("SELECT STDDEV(i.money.amount) FROM Receipt i WHERE i.money.currency = 'USD'")
 	Double dvtMoneyCurrency2();
 	
 

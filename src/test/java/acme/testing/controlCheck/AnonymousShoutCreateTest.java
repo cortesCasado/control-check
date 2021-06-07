@@ -21,10 +21,10 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("link", info);
-		super.fillInputBoxIn("infoSheet.rareID", infoSheet_rareID);
-		super.fillInputBoxIn("infoSheet.moment", infoSheet_moment);
-		super.fillInputBoxIn("infoSheet.money", infoSheet_money);
-		super.fillInputBoxIn("infoSheet.flag", infoSheet_flag);
+		super.fillInputBoxIn("receipt.refence", infoSheet_rareID);
+		super.fillInputBoxIn("receipt.deadline", infoSheet_moment);
+		super.fillInputBoxIn("receipt.totalPrice", infoSheet_money);
+		super.fillInputBoxIn("receipt.paid", infoSheet_flag);
 
 		super.clickOnSubmitButton("Shout!");
 
@@ -52,19 +52,19 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("link", info);
-		super.fillInputBoxIn("infoSheet.rareID", infoSheet_rareID);
-		super.fillInputBoxIn("infoSheet.moment", infoSheet_moment);
-		super.fillInputBoxIn("infoSheet.money", infoSheet_money);
-		super.fillInputBoxIn("infoSheet.flag", infoSheet_flag);
+		super.fillInputBoxIn("receipt.rareID", infoSheet_rareID);
+		super.fillInputBoxIn("receipt.deadline", infoSheet_moment);
+		super.fillInputBoxIn("receipt.totalPrice", infoSheet_money);
+		super.fillInputBoxIn("receipt.paid", infoSheet_flag);
 
 		super.clickOnSubmitButton("Shout!");
 
 		super.checkErrorsExist("author");
 		super.checkErrorsExist("text");
 		super.checkErrorsExist("link");
-		super.checkErrorsExist("infoSheet.rareID");
-		super.checkErrorsExist("infoSheet.moment");
-		super.checkErrorsExist("infoSheet.money");
+		super.checkErrorsExist("receipt.refence");
+		super.checkErrorsExist("receipt.deadline");
+		super.checkErrorsExist("receipt.totalPrice");
 
 	}
 }

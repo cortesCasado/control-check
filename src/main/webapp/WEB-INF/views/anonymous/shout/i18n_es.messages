@@ -8,17 +8,17 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.list.label.infoSheet.rareID = RareID:
-anonymous.shout.list.label.infoSheet.moment = Momento:
-anonymous.shout.list.label.infoSheet.money = Dinero:
-anonymous.shout.list.label.infoSheet.flag = Bandera:
+anonymous.shout.list.label.infoSheet.rareID = Referencia:
+anonymous.shout.list.label.infoSheet.moment = Fecha límite:
+anonymous.shout.list.label.infoSheet.money = Precio total:
+anonymous.shout.list.label.infoSheet.flag = Pagada:
 
 
 
-anonymous.shout.form.label.infoSheet.rareID = RareID:
-anonymous.shout.form.label.infoSheet.moment = Momento:
-anonymous.shout.form.label.infoSheet.money = Dinero:
-anonymous.shout.form.label.infoSheet.flag = Bandera
+anonymous.shout.form.label.infoSheet.rareID = Referencia:
+anonymous.shout.form.label.infoSheet.moment = Deadline:
+anonymous.shout.form.label.infoSheet.money = Precio total:
+anonymous.shout.form.label.infoSheet.flag = Pagada:
 
 
 anonymous.shout.form.error.infoSheet.money = Divisa no permitida

@@ -51,7 +51,7 @@
 			<acme:message code="administrator.dashboard.entities.label.flaggedAs"/>
 		</th>
 		<td>
-			<acme:print value="${flaggedAs}"/>
+			<acme:print value="${flaggedAs}%"/>
 		</td>
 	</tr>
 	<tr>

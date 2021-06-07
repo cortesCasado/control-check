@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.components.Spam.AnonymousSpamRepository;
 import acme.components.Spam.Spam1;
-import acme.entities.info.Info;
+import acme.entities.info.Receipt;
 import acme.entities.shouts.Shout;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -55,7 +55,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		model.setAttribute("rareIdPlaceholder", this.getReferenceRegExp(c, "-"));
 
-		request.unbind(entity, model, "author", "text", "link", "infoSheet.rareID", "infoSheet.moment", "infoSheet.money", "infoSheet.flag");
+		request.unbind(entity, model, "author", "text", "link", "receipt.reference", "receipt.deadline", "receipt.totalPrice", "receipt.paid");
 	}
 
 	@Override
@@ -73,11 +73,11 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		result.setMoment(moment);
 		result.setLink("");
 
-		Info infoSheet = new Info();
-		infoSheet.setFlag(Boolean.FALSE);
-		//		infoSheet.setMoment(moment);
+		Receipt infoSheet = new Receipt();
+		infoSheet.setPaid(Boolean.FALSE);
+		//		receipt.setMoment(deadline);
 
-		result.setInfoSheet(infoSheet);
+		result.setReceipt(infoSheet);
 		infoSheet.setShout(result);
 
 		return result;
@@ -90,16 +90,16 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert errors != null;
 
-		final Info infoSheet = entity.getInfoSheet();
+		final Receipt infoSheet = entity.getReceipt();
 
-		Money m = infoSheet.getMoney();
+		Money m = infoSheet.getTotalPrice();
 
 		if (m != null) {
 			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
-			errors.state(request, notAllowedCurrency, "infoSheet.money", "anonymous.shout.form.error.infoSheet.money");
+			errors.state(request, notAllowedCurrency, "receipt.totalPrice", "anonymous.shout.form.error.infoSheet.money");
 		}
 
-		String s = infoSheet.getRareID();
+		String s = infoSheet.getReference();
 
 		if (s != null) {
 			Calendar c = Calendar.getInstance();
@@ -108,14 +108,14 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			String regExp = this.getReferenceRegExp(c, "-"); 
 			
 			final boolean matchRegExp = s.matches(regExp);
-			errors.state(request, matchRegExp, "infoSheet.rareID", "anonymous.shout.form.error.infoSheet.rareIdRegExp");
+			errors.state(request, matchRegExp, "receipt.reference", "anonymous.shout.form.error.infoSheet.rareIdRegExp");
 
 			if (!matchRegExp) {
 				request.getModel().setAttribute("rareIdPlaceholder", regExp);
 			}
 
 			final boolean uniqueId = this.shoutRepository.findRareIDs().stream().noneMatch(r -> r.equals(s));
-			errors.state(request, uniqueId, "infoSheet.rareID", "anonymous.shout.form.error.infoSheet.rareIdUnique");
+			errors.state(request, uniqueId, "receipt.reference", "anonymous.shout.form.error.infoSheet.rareIdUnique");
 		}
 
 		if (!entity.getAuthor().isEmpty()) {
@@ -140,7 +140,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		entity.setMoment(moment);
 
 		this.shoutRepository.save(entity);
-		this.shoutRepository.save(entity.getInfoSheet());
+		this.shoutRepository.save(entity.getReceipt());
 
 	}
 
