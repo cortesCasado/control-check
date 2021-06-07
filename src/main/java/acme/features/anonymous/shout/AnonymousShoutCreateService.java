@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.components.Spam.AnonymousSpamRepository;
 import acme.components.Spam.Spam1;
-import acme.entities.info.Info;
+import acme.entities.receipt.Receipt;
 import acme.entities.shouts.Shout;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -53,9 +53,13 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Calendar c = Calendar.getInstance();
 		c.setTime(entity.getMoment());
 
-		model.setAttribute("rareIdPlaceholder", this.getReferenceRegExp(c, "-"));
+		model.setAttribute("referencePlaceholder", AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}");
 
-		request.unbind(entity, model, "author", "text", "link", "infoSheet.rareID", "infoSheet.moment", "infoSheet.money", "infoSheet.flag");
+		request.unbind(entity, model, "author", "text", "link", 
+			"receipt.reference",
+//			"receipt.deadline", 
+			"receipt.totalPrice", 
+			"receipt.paid");
 	}
 
 	@Override
@@ -63,22 +67,22 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 
 		Shout result;
-		Date moment;
+		Date deadline;
 
-		moment = new Date(System.currentTimeMillis() - 1);
+		deadline = new Date(System.currentTimeMillis() - 1);
 
 		result = new Shout();
 		result.setAuthor("");
 		result.setText("");
-		result.setMoment(moment);
+		result.setMoment(deadline);
 		result.setLink("");
 
-		Info infoSheet = new Info();
-		infoSheet.setFlag(Boolean.FALSE);
-		//		infoSheet.setMoment(moment);
+		Receipt receipt = new Receipt();
+		receipt.setPaid(Boolean.FALSE);
+		receipt.setDeadline(deadline);
 
-		result.setInfoSheet(infoSheet);
-		infoSheet.setShout(result);
+		result.setReceipt(receipt);
+		receipt.setShout(result);
 
 		return result;
 
@@ -90,32 +94,32 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert errors != null;
 
-		final Info infoSheet = entity.getInfoSheet();
+		final Receipt receipt = entity.getReceipt();
 
-		Money m = infoSheet.getMoney();
+		Money m = receipt.getTotalPrice();
 
 		if (m != null) {
 			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
-			errors.state(request, notAllowedCurrency, "infoSheet.money", "anonymous.shout.form.error.infoSheet.money");
+			errors.state(request, notAllowedCurrency, "receipt.totalPrice", "anonymous.shout.form.error.receipt.totalPrice");
 		}
 
-		String s = infoSheet.getRareID();
+		String s = receipt.getReference();
 
 		if (s != null) {
 			Calendar c = Calendar.getInstance();
 			c.setTime(entity.getMoment());
-			
-			String regExp = this.getReferenceRegExp(c, "-"); 
-			
+
+			String regExp = AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}";
+
 			final boolean matchRegExp = s.matches(regExp);
-			errors.state(request, matchRegExp, "infoSheet.rareID", "anonymous.shout.form.error.infoSheet.rareIdRegExp");
+			errors.state(request, matchRegExp, "receipt.reference", "anonymous.shout.form.error.receipt.referenceRegExp");
 
 			if (!matchRegExp) {
-				request.getModel().setAttribute("rareIdPlaceholder", regExp);
+				request.getModel().setAttribute("referencePlaceholder", regExp);
 			}
 
-			final boolean uniqueId = this.shoutRepository.findRareIDs().stream().noneMatch(r -> r.equals(s));
-			errors.state(request, uniqueId, "infoSheet.rareID", "anonymous.shout.form.error.infoSheet.rareIdUnique");
+			final boolean uniqueId = this.shoutRepository.findReferences().stream().noneMatch(r -> r.equals(s));
+			errors.state(request, uniqueId, "receipt.reference", "anonymous.shout.form.error.receipt.referenceUnique");
 		}
 
 		if (!entity.getAuthor().isEmpty()) {
@@ -134,17 +138,17 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-		Date moment;
+		Date deadline;
 
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(moment);
+		deadline = new Date(System.currentTimeMillis() - 1);
+		entity.setMoment(deadline);
 
 		this.shoutRepository.save(entity);
-		this.shoutRepository.save(entity.getInfoSheet());
+		this.shoutRepository.save(entity.getReceipt());
 
 	}
 
-	private String getReferenceRegExp(Calendar c, String separator) {
+	public static String getReferenceRegExp(Calendar c, String separator) {
 		String day = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
 		String month = String.valueOf(c.get(Calendar.MONTH) + 1);
 		String year = String.valueOf(c.get(Calendar.YEAR));
@@ -160,7 +164,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		}
 		year = bld.toString();
 
-		return day + separator + month + separator + year + " [0-9]{2}";
+		return day + separator + month + separator + year;
 	}
 
 }

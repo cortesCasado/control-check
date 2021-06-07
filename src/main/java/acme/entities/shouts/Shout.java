@@ -15,7 +15,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.info.Info;
+import acme.entities.receipt.Receipt;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,7 +32,7 @@ public class Shout extends DomainEntity {
 	@NotNull
 	@Valid
 	@OneToOne(mappedBy = "shout")
-	protected Info				infoSheet;
+	protected Receipt				receipt;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
@@ -56,9 +56,9 @@ public class Shout extends DomainEntity {
 		return this.id + "," + this.version + "," + 
 	this.moment + "," + this.author + "," + this.text + "," + this.link + "," + 
 			
-	this.infoSheet.getRareID() + "," + this.infoSheet.getMoment().toString() + "," + 
-	this.infoSheet.getMoney().getCurrency() + " " + this.infoSheet.getMoney().getAmount() + "," + 
-	this.infoSheet.getFlag();
+	this.receipt.getReference() + "," + this.receipt.getDeadline().toString() + "," + 
+	this.receipt.getTotalPrice().getCurrency() + " " + this.receipt.getTotalPrice().getAmount() + "," + 
+	this.receipt.getPaid();
 	}
 
 }

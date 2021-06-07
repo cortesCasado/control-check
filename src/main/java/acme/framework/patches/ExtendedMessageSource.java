@@ -167,7 +167,7 @@ public class ExtendedMessageSource extends AbstractResourceBasedMessageSource im
 	 * <p>
 	 * Default is "true": this behavior is new as of Spring Framework 4.1,
 	 * minimizing contention between threads. If you prefer the old behavior,
-	 * i.e. to fully block on refresh, switch this flag to "false".
+	 * i.e. to fully block on refresh, switch this paid to "false".
 	 *
 	 * @since 4.1
 	 * @see #setCacheSeconds

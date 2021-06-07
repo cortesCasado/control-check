@@ -17,7 +17,7 @@ public class Dashboard implements Serializable {
 
 	//Control check
 	
-	Integer flaggedAs;
+	Double flaggedAs;
 	Double ratioOfShouts;
 	
 	Double 	avgMoneyCurrency1;

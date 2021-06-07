@@ -612,12 +612,12 @@ Shout
       <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Info
+Receipt
 --
-+ rareID: String {Id}
-+ moment: Date {NotBlank, Past, Temporal(TIMESTAMP)}
-+ money: Money {NotNull}
-+ flag: Boolean {NotNull}
++ reference: String {Unique, NotBlank, Pattern}
++ deadline: Date {NotBlank, Past, Temporal(TIMESTAMP)}
++ totalPrice: Money {NotNull}
++ paid: Boolean {NotNull}
 </panel_attributes>
     <additional_attributes/>
   </element>

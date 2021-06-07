@@ -1,4 +1,4 @@
-package acme.entities.info;
+package acme.entities.receipt;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Info extends DomainEntity {
+public class Receipt extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -33,25 +33,28 @@ public class Info extends DomainEntity {
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-3]{1}[0-9]{1}-[0-1]{1}[0-9]{1}-[0-9]{4} [0-9]{2}", message = "Error")
-	protected String			rareID;
+	protected String			reference;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				moment;
+	protected Date				deadline;
 
 	@NotNull
 	@Valid
-	protected Money				money;
+	protected Money				totalPrice;
 
 	@NotNull
-	protected Boolean			flag;
+	protected Boolean			paid;
 
 	
-	public void setMoment(Date moment) {
+	public void setDeadline(Date deadline) {
 		Calendar c = Calendar.getInstance();
-		c.setTime(moment);
-		c.add(Calendar.DATE, 1);
-		this.moment = c.getTime();
+		c.setTime(deadline);
+		c.add(Calendar.DATE, 15);
+		c.set(Calendar.HOUR, 8);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
+		this.deadline = c.getTime();
 	}
 
 	// Derived attributes -----------------------------------------------------
