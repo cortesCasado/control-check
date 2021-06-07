@@ -67,19 +67,19 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert request != null;
 
 		Shout result;
-		Date deadline;
+		Date moment;
 
-		deadline = new Date(System.currentTimeMillis() - 1);
+		moment = new Date(System.currentTimeMillis() - 1);
 
 		result = new Shout();
 		result.setAuthor("");
 		result.setText("");
-		result.setMoment(deadline);
+		result.setMoment(moment);
 		result.setLink("");
 
 		Receipt receipt = new Receipt();
 		receipt.setPaid(Boolean.FALSE);
-		receipt.setDeadline(deadline);
+		receipt.setDeadline(moment);
 
 		result.setReceipt(receipt);
 		receipt.setShout(result);
@@ -138,10 +138,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-		Date deadline;
+		Date moment;
 
-		deadline = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(deadline);
+		moment = new Date(System.currentTimeMillis() - 1);
+		entity.setMoment(moment);
 
 		this.shoutRepository.save(entity);
 		this.shoutRepository.save(entity.getReceipt());
