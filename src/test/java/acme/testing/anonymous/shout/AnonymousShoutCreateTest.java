@@ -17,7 +17,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void createPositive(final int id, final int version, String moment, final String author, 
-		final String text, final String info, final String infoSheet_reference, final String infoSheet_moment, final String infoSheet_money,
+		final String text, final String info, final String infoSheet_reference, final String infoSheet_moment, final String infoSheet_totalPrice,
 		final String infoSheet_flag) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
@@ -26,7 +26,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.fillInputBoxIn("link", info);
 		super.fillInputBoxIn("infoSheet.reference", infoSheet_reference);
 		super.fillInputBoxIn("infoSheet.moment", infoSheet_moment);
-		super.fillInputBoxIn("infoSheet.money", infoSheet_money);
+		super.fillInputBoxIn("infoSheet.totalPrice", infoSheet_totalPrice);
 		super.fillInputBoxIn("infoSheet.flag", infoSheet_flag);
 
 		super.clickOnSubmitButton("Shout!");
@@ -38,7 +38,7 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 3, info);
 		super.checkColumnHasValue(id, 4, infoSheet_reference);
 		super.checkColumnHasValue(id, 5, infoSheet_moment);
-		super.checkColumnHasValue(id, 6, infoSheet_money);
+		super.checkColumnHasValue(id, 6, infoSheet_totalPrice);
 		super.checkColumnHasValue(id, 7, infoSheet_flag);
 
 	}

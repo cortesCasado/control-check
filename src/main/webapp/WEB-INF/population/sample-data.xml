@@ -17,10 +17,10 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="infoSheet1" />
+		<property name="receipt" ref="receipt1" />
 	</bean>
 
-	<bean name="infoSheet1" class="acme.entities.info.Receipt">
+	<bean name="receipt1" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="01-06-2021 01" />
 		<property name="deadline" value="2021/06/01 19:39" />
 		<property name="totalPrice" value="EUR 100.98" />
@@ -37,10 +37,10 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="infoSheet2" />
+		<property name="receipt" ref="receipt2" />
 	</bean>
 
-	<bean name="infoSheet2" class="acme.entities.info.Receipt">
+	<bean name="receipt2" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="02-06-2021 02" />
 		<property name="deadline" value="2021/06/02 19:40" />
 		<property name="totalPrice" value="EUR 500.98" />
@@ -59,10 +59,10 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="infoSheet3" />
+		<property name="receipt" ref="receipt3" />
 	</bean>
 
-	<bean name="infoSheet3" class="acme.entities.info.Receipt">
+	<bean name="receipt3" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="03-06-2021 03" />
 		<property name="deadline" value="2021/06/03 19:41" />
 		<property name="totalPrice" value="USD 700.98" />
@@ -77,10 +77,10 @@
 		<property name="author" value="Jaime Benjumea" />
 		<property name="text" value="Notas provisionales publicadas" />
 		<property name="link" value="https://ev.us.es/" />
-		<property name="receipt" ref="infoSheet4" />
+		<property name="receipt" ref="receipt4" />
 	</bean>
 
-	<bean name="infoSheet4" class="acme.entities.info.Receipt">
+	<bean name="receipt4" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="04-06-2021 04" />
 		<property name="deadline" value="2021/06/04 00:39" />
 		<property name="totalPrice" value="EUR 200.98" />
@@ -98,10 +98,10 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="infoSheet5" />
+		<property name="receipt" ref="receipt5" />
 	</bean>
 
-	<bean name="infoSheet5" class="acme.entities.info.Receipt">
+	<bean name="receipt5" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="04-06-2021 05" />
 		<property name="deadline" value="2021/06/04 01:23" />
 		<property name="totalPrice" value="EUR 300.98" />
@@ -116,10 +116,10 @@
 		<property name="author" value="Javier Cortés" />
 		<property name="text" value="Dudas sobre exámenes" />
 		<property name="link" value="https://www.stackoverflow.com/" />
-		<property name="receipt" ref="infoSheet6" />
+		<property name="receipt" ref="receipt6" />
 	</bean>
 
-	<bean name="infoSheet6" class="acme.entities.info.Receipt">
+	<bean name="receipt6" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="03-06-2021 06" />
 		<property name="deadline" value="2021/06/03 19:41" />
 		<property name="totalPrice" value="USD 320.98" />
@@ -136,10 +136,10 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="infoSheet7" />
+		<property name="receipt" ref="receipt7" />
 	</bean>
 
-	<bean name="infoSheet7" class="acme.entities.info.Receipt">
+	<bean name="receipt7" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="02-06-2021 07" />
 		<property name="deadline" value="2021/06/02 19:39" />
 		<property name="totalPrice" value="EUR 430.98" />
@@ -154,10 +154,10 @@
 		<property name="author" value="Antonio Rojas" />
 		<property name="text" value="Probando funcionalidades" />
 		<property name="link" value="https://www.example.com" />
-		<property name="receipt" ref="infoSheet8" />
+		<property name="receipt" ref="receipt8" />
 	</bean>
 
-	<bean name="infoSheet8" class="acme.entities.info.Receipt">
+	<bean name="receipt8" class="acme.entities.receipt.Receipt">
 		<property name="reference" value="01-06-2021 08" />
 		<property name="deadline" value="2021/06/01 19:40" />
 		<property name="totalPrice" value="EUR 1500.98" />

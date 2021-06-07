@@ -1,4 +1,4 @@
-package acme.entities.info;
+package acme.entities.receipt;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -47,9 +47,9 @@ public class Receipt extends DomainEntity {
 	protected Boolean			paid;
 
 	
-	public void setDeadline(Date moment) {
+	public void setDeadline(Date deadline) {
 		Calendar c = Calendar.getInstance();
-		c.setTime(moment);
+		c.setTime(deadline);
 		c.add(Calendar.DATE, 15);
 		c.set(Calendar.HOUR, 8);
 		c.set(Calendar.MINUTE, 0);

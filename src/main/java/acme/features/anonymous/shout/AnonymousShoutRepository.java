@@ -14,6 +14,6 @@ public interface AnonymousShoutRepository extends AbstractRepository {
 	Collection<Shout> findMany();
 
 	@Query("SELECT i.reference FROM Receipt i")
-	Collection<String> findreferences();
+	Collection<String> findReferences();
 
 }

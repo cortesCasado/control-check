@@ -15,7 +15,7 @@ import javax.validation.constraints.Past;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
-import acme.entities.info.Receipt;
+import acme.entities.receipt.Receipt;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;

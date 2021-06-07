@@ -19,7 +19,9 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void createPositive(final int id, final int version, final String author, final String text, final String info, final String infoSheet_reference, final String infoSheet_moment, final String infoSheet_money, final String infoSheet_flag) {
+	public void createPositive(final int id, final int version, final String author, final String text, final String info, 
+		final String receipt_reference, final String receipt_deadline, final String receipt_totalPrice, 
+		final String receipt_paid) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
 		super.fillInputBoxIn("author", author);
@@ -28,12 +30,12 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		
 		Calendar c = Calendar.getInstance();
 		c.setTime(new Date(System.currentTimeMillis() - 1));
-		String reference = AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " " + infoSheet_reference;
+		String reference = AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " " + receipt_reference;
 		
 		super.fillInputBoxIn("receipt.reference", reference);
-//		super.fillInputBoxIn("receipt.deadline", infoSheet_moment);
-		super.fillInputBoxIn("receipt.totalPrice", infoSheet_money);
-		super.fillInputBoxIn("receipt.paid", infoSheet_flag);
+//		super.fillInputBoxIn("receipt.deadline", receipt_deadline);
+		super.fillInputBoxIn("receipt.totalPrice", receipt_totalPrice);
+		super.fillInputBoxIn("receipt.paid", receipt_paid);
 
 		super.clickOnSubmitButton("Shout!");
 
@@ -43,9 +45,9 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 2, text);
 		super.checkColumnHasValue(id, 3, info);
 		super.checkColumnHasValue(id, 4, reference);
-//		super.checkColumnHasValue(id, 5, infoSheet_moment);
-		super.checkColumnHasValue(id, 6, infoSheet_money);
-		super.checkColumnHasValue(id, 7, infoSheet_flag);
+//		super.checkColumnHasValue(id, 5, receipt_deadline);
+		super.checkColumnHasValue(id, 6, receipt_totalPrice);
+		super.checkColumnHasValue(id, 7, receipt_paid);
 
 	}
 
@@ -55,16 +57,18 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	 */
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
-	public void createNegative(final int id, final int version, final String author, final String text, final String info, final String infoSheet_reference, final String infoSheet_moment, final String infoSheet_money, final String infoSheet_flag) {
+	public void createNegative(final int id, final int version, final String author, final String text, final String info, 
+		final String receipt_reference, final String receipt_deadline, final String receipt_totalPrice, 
+		final String receipt_paid) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("link", info);
-		super.fillInputBoxIn("receipt.reference", infoSheet_reference);
-//		super.fillInputBoxIn("receipt.deadline", infoSheet_moment);
-		super.fillInputBoxIn("receipt.totalPrice", infoSheet_money);
-		super.fillInputBoxIn("receipt.paid", infoSheet_flag);
+		super.fillInputBoxIn("receipt.reference", receipt_reference);
+//		super.fillInputBoxIn("receipt.deadline", receipt_deadline);
+		super.fillInputBoxIn("receipt.totalPrice", receipt_totalPrice);
+		super.fillInputBoxIn("receipt.paid", receipt_paid);
 
 		super.clickOnSubmitButton("Shout!");
 

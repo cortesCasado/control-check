@@ -8,22 +8,22 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.list.label.infoSheet.reference = Referencia:
-anonymous.shout.list.label.infoSheet.deadline = Fecha límite:
-anonymous.shout.list.label.infoSheet.totalPrice = Precio total:
-anonymous.shout.list.label.infoSheet.paid = Pagada:
+anonymous.shout.list.label.receipt.reference = Referencia:
+anonymous.shout.list.label.receipt.deadline = Fecha límite:
+anonymous.shout.list.label.receipt.totalPrice = Precio total:
+anonymous.shout.list.label.receipt.paid = Pagada:
 
 
 
-anonymous.shout.form.label.infoSheet.reference = Referencia:
-anonymous.shout.form.label.infoSheet.deadline = Deadline:
-anonymous.shout.form.label.infoSheet.money = Precio total:
-anonymous.shout.form.label.infoSheet.paid = Pagada:
+anonymous.shout.form.label.receipt.reference = Referencia:
+anonymous.shout.form.label.receipt.deadline = Deadline:
+anonymous.shout.form.label.receipt.totalPrice = Precio total:
+anonymous.shout.form.label.receipt.paid = Pagada:
 
 
-anonymous.shout.form.error.infoSheet.money = Divisa no permitida
-anonymous.shout.form.error.infoSheet.referenceRegExp = La refencia debe encajar con el patrón proporcionado
-anonymous.shout.form.error.infoSheet.referenceUnique = No pueden existir dos referencias iguales
+anonymous.shout.form.error.receipt.totalPrice = Divisa no permitida
+anonymous.shout.form.error.receipt.referenceRegExp = La refencia debe encajar con el patrón proporcionado
+anonymous.shout.form.error.receipt.referenceUnique = No pueden existir dos referencias iguales
 
 
 
