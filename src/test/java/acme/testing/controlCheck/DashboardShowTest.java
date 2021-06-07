@@ -21,7 +21,7 @@ public class DashboardShowTest extends AcmePlannerTest {
 
 		super.clickOnMenu("Administrator", "Dashboard");
 		
-		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[1]/td[normalize-space(text()) = '6%']"));
+		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[1]/td[normalize-space(text()) = '75.0%']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[2]/td[normalize-space(text()) = '25.0%']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[3]/td[normalize-space(text()) = '505.98']"));
 		super.checkExists(By.xpath("/html/body/div[2]/div/table[1]/tbody/tr[4]/td[normalize-space(text()) = '464.53']"));

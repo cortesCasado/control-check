@@ -614,7 +614,7 @@ Shout
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Info
 --
-+ rareID: String {Id}
++ reference: String {Id}
 + moment: Date {NotBlank, Past, Temporal(TIMESTAMP)}
 + money: Money {NotNull}
 + flag: Boolean {NotNull}

@@ -50,7 +50,10 @@ public class Receipt extends DomainEntity {
 	public void setDeadline(Date moment) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(moment);
-		c.add(Calendar.DATE, 1);
+		c.add(Calendar.DATE, 15);
+		c.set(Calendar.HOUR, 8);
+		c.set(Calendar.MINUTE, 0);
+		c.set(Calendar.SECOND, 0);
 		this.deadline = c.getTime();
 	}
 

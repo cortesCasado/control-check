@@ -1,4 +1,4 @@
-id,version,moment,author,text,info,infoSheet_rareID,infoSheet_moment,infoSheet_money,infoSheet_flag
+id,version,moment,author,text,info,infoSheet_reference,infoSheet_moment,infoSheet_money,infoSheet_flag
 0,0,2021/06/04 01:23,Rafael Nadal,Sorteo de dos entradas para Mutua Madrid Open,,04-06-2021 05,2021/02/15 19:39,EUR 300.98,true
 1,0,2021/06/04 00:39,Jaime Benjumea,Notas provisionales publicadas,https://ev.us.es/,04-06-2021 04,2021/02/15 19:39,EUR 200.98,true
 2,0,2021/06/03 19:41,Patricia Jimenez,Announcing next monday follow up,,03-06-2021 03,2021/02/15 19:39,USD 700.98,false
