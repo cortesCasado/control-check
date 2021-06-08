@@ -7,7 +7,6 @@ import java.util.Date;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.features.anonymous.shout.AnonymousShoutCreateService;
 import acme.testing.AcmePlannerTest;
 
 public class AnonymousShoutCreateTest extends AcmePlannerTest {
@@ -30,7 +29,16 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		
 		Calendar c = Calendar.getInstance();
 		c.setTime(new Date(System.currentTimeMillis() - 1));
-		String referenciaEx = AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " " + receiptEx_referenciaEx;
+		String day = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+		String month = String.valueOf(c.get(Calendar.MONTH) + 1);
+		String year = String.valueOf(c.get(Calendar.YEAR));
+
+		if (day.length() == 1)
+			day = "0" + day;
+		if (month.length() == 1)
+			month = "0" + month;
+
+		String referenciaEx = day + "-" + month + " " + year + " " + receiptEx_referenciaEx;
 		
 		super.fillInputBoxIn("receiptEx.referenciaEx", referenciaEx);
 //		super.fillInputBoxIn("receiptEx.deadlineEx", receiptEx_deadlineEx);

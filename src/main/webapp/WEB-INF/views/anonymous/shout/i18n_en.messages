@@ -15,9 +15,19 @@ anonymous.shout.list.label.receiptEx.paidEx = Pagado:
 
 
 anonymous.shout.form.label.receiptEx.referenciaEx = ReferenciaEx:
-anonymous.shout.form.label.receiptEx.deadlineEx = Moment:
+anonymous.shout.form.label.receiptEx.deadlineEx = DeadlineEx:
 anonymous.shout.form.label.receiptEx.totalPriceEx = Total price:
-anonymous.shout.form.label.receiptEx.paidEx = Pagado:
+anonymous.shout.form.label.receiptEx.paidEx = Pagado
+
+
+anonymous.shout.form.error.receiptEx.deadlineEx = Deadline must be in the future
+anonymous.shout.form.error.receiptEx.totalPriceEx = Currency not allowed, EUR or USD expected
+anonymous.shout.form.error.receiptEx.referenciaExRegExp = ReferenciaEx must match the placeholder pattern
+anonymous.shout.form.error.receiptEx.referenciaExUnique = Cannot exist two info sheets with same referenciaEx
+
+
+
+
 
 
 
@@ -33,13 +43,5 @@ anonymous.shout.list.label.author = Author
 anonymous.shout.list.label.text = Text
 anonymous.shout.list.label.link = Info
 
-
-
-
 anonymous.shout.form.error.author = Author's name contains Spam
 anonymous.shout.form.error.text = This text contains Spam
-
-anonymous.shout.form.error.receiptEx.deadlineEx = Deadline must be in the future
-anonymous.shout.form.error.receiptEx.totalPriceEx = Currency not allowed, EUR or USD expected
-anonymous.shout.form.error.receiptEx.referenciaExRegExp = ReferenciaEx must match the placeholder pattern
-anonymous.shout.form.error.receiptEx.referenciaExUnique = Cannot exist two info sheets with same referenciaEx

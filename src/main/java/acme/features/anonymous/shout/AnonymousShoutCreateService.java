@@ -53,7 +53,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Calendar c = Calendar.getInstance();
 		c.setTime(entity.getMoment());
 
-		model.setAttribute("referenciaExPlaceholder", AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " [0-9]{2}");
+		model.setAttribute("referenciaExPlaceholder", AnonymousShoutCreateService.getReferenciaExRegExp(c, "-"));
 
 
 		request.unbind(entity, model, "author", "text", "link", "receiptEx.referenciaEx",
@@ -97,7 +97,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Calendar c = Calendar.getInstance();
 		c.setTime(entity.getMoment());
 
-		String regExp = AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " [0-9]{2}";
+		String regExp = AnonymousShoutCreateService.getReferenciaExRegExp(c, "-");
 
 		if (s != null) {
 			final boolean matchRegExp = s.matches(regExp);
@@ -157,7 +157,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		if (month.length() == 1)
 			month = "0" + month;
 
-		return day + separator + month + separator + year;
+		return day + separator + month + separator + year + " [0-9]{2}";
 	}
 
 }
