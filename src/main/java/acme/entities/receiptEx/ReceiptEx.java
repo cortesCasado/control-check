@@ -56,6 +56,22 @@ public class ReceiptEx extends DomainEntity {
 		c.set(Calendar.SECOND, 0);
 		this.deadlineEx = c.getTime();
 	}
+	
+	public static String getReferenciaExRegExp(Date d, String separator) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(d);
+		
+		String day = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
+		String month = String.valueOf(c.get(Calendar.MONTH) + 1);
+		String year = String.valueOf(c.get(Calendar.YEAR));
+
+		if (day.length() == 1)
+			day = "0" + day;
+		if (month.length() == 1)
+			month = "0" + month;
+
+		return day + separator + month + separator + year;
+	}
 
 	// Derived attributes -----------------------------------------------------
 
