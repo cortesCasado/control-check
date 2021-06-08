@@ -56,9 +56,9 @@ public class Shout extends DomainEntity {
 		return this.id + "," + this.version + "," + 
 	this.moment + "," + this.author + "," + this.text + "," + this.link + "," + 
 			
-	this.receipt.getReference() + "," + this.receipt.getDeadline().toString() + "," + 
-	this.receipt.getTotalPrice().getCurrency() + " " + this.receipt.getTotalPrice().getAmount() + "," + 
-	this.receipt.getPaid();
+	this.receipt.getReferenciaEx() + "," + this.receipt.getDeadlineEx().toString() + "," + 
+	this.receipt.getTotalPriceEx().getCurrency() + " " + this.receipt.getTotalPriceEx().getAmount() + "," + 
+	this.receipt.getPaidEx();
 	}
 
 }

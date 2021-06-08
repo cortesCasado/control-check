@@ -8,22 +8,22 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.list.label.receipt.reference = Referencia:
-anonymous.shout.list.label.receipt.deadline = Fecha límite:
-anonymous.shout.list.label.receipt.totalPrice = Precio total:
-anonymous.shout.list.label.receipt.paid = Pagada:
+anonymous.shout.list.label.receipt.referenciaEx = Referencia:
+anonymous.shout.list.label.receipt.deadlineEx = Fecha límite:
+anonymous.shout.list.label.receipt.totalPriceEx = Precio total:
+anonymous.shout.list.label.receipt.paidEx = Pagada:
 
 
 
-anonymous.shout.form.label.receipt.reference = Referencia:
-anonymous.shout.form.label.receipt.deadline = Deadline:
-anonymous.shout.form.label.receipt.totalPrice = Precio total:
-anonymous.shout.form.label.receipt.paid = Pagada:
+anonymous.shout.form.label.receipt.referenciaEx = Referencia:
+anonymous.shout.form.label.receipt.deadlineEx = DeadlineEx:
+anonymous.shout.form.label.receipt.totalPriceEx = Precio total:
+anonymous.shout.form.label.receipt.paidEx = Pagada:
 
 
-anonymous.shout.form.error.receipt.totalPrice = Divisa no permitida, solo se admiten EUR o USD
-anonymous.shout.form.error.receipt.referenceRegExp = La refencia debe encajar con el patrón proporcionado
-anonymous.shout.form.error.receipt.referenceUnique = No pueden existir dos referencias iguales
+anonymous.shout.form.error.receipt.totalPriceEx = Divisa no permitida, solo se admiten EUR o USD
+anonymous.shout.form.error.receipt.referenciaExRegExp = La refencia debe encajar con el patrón proporcionado
+anonymous.shout.form.error.receipt.referenciaExUnique = No pueden existir dos referencias iguales
 
 
 

@@ -33,28 +33,28 @@ public class Receipt extends DomainEntity {
 	@NotBlank
 	@Column(unique = true)
 	@Pattern(regexp = "[0-3]{1}[0-9]{1}-[0-1]{1}[0-9]{1}-[0-9]{4} [0-9]{2}", message = "Error")
-	protected String			reference;
+	protected String			referenciaEx;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				deadline;
+	protected Date				deadlineEx;
 
 	@NotNull
 	@Valid
-	protected Money				totalPrice;
+	protected Money				totalPriceEx;
 
 	@NotNull
-	protected Boolean			paid;
+	protected Boolean			paidEx;
 
 	
-	public void setDeadline(Date deadline) {
+	public void setDeadlineEx(Date deadlineEx) {
 		Calendar c = Calendar.getInstance();
-		c.setTime(deadline);
+		c.setTime(deadlineEx);
 		c.add(Calendar.DATE, 15);
 		c.set(Calendar.HOUR, 8);
 		c.set(Calendar.MINUTE, 0);
 		c.set(Calendar.SECOND, 0);
-		this.deadline = c.getTime();
+		this.deadlineEx = c.getTime();
 	}
 
 	// Derived attributes -----------------------------------------------------

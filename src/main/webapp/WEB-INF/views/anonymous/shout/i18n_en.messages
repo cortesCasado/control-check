@@ -8,16 +8,16 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.list.label.receipt.reference = Reference:
-anonymous.shout.list.label.receipt.deadline = Deadline:
-anonymous.shout.list.label.receipt.totalPrice = Total price:
-anonymous.shout.list.label.receipt.paid = Pagado:
+anonymous.shout.list.label.receipt.referenciaEx = ReferenciaEx:
+anonymous.shout.list.label.receipt.deadlineEx = DeadlineEx:
+anonymous.shout.list.label.receipt.totalPriceEx = Total price:
+anonymous.shout.list.label.receipt.paidEx = Pagado:
 
 
-anonymous.shout.form.label.receipt.reference = Reference:
-anonymous.shout.form.label.receipt.deadline = Moment:
-anonymous.shout.form.label.receipt.totalPrice = Total price:
-anonymous.shout.form.label.receipt.paid = Pagado:
+anonymous.shout.form.label.receipt.referenciaEx = ReferenciaEx:
+anonymous.shout.form.label.receipt.deadlineEx = Moment:
+anonymous.shout.form.label.receipt.totalPriceEx = Total price:
+anonymous.shout.form.label.receipt.paidEx = Pagado:
 
 
 
@@ -38,6 +38,6 @@ anonymous.shout.list.label.link = Info
 
 anonymous.shout.form.error.author = Author's name contains Spam
 anonymous.shout.form.error.text = This text contains Spam
-anonymous.shout.form.error.receipt.totalPrice = Currency not allowed, EUR or USD expected
-anonymous.shout.form.error.receipt.referenceRegExp = Reference must match the placeholder pattern
-anonymous.shout.form.error.receipt.referenceUnique = Cannot exist two info sheets with same reference
+anonymous.shout.form.error.receipt.totalPriceEx = Currency not allowed, EUR or USD expected
+anonymous.shout.form.error.receipt.referenciaExRegExp = ReferenciaEx must match the placeholder pattern
+anonymous.shout.form.error.receipt.referenciaExUnique = Cannot exist two info sheets with same referenciaEx

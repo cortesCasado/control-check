@@ -614,10 +614,10 @@ Shout
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
 Receipt
 --
-+ reference: String {Unique, NotBlank, Pattern}
-+ deadline: Date {NotBlank, Past, Temporal(TIMESTAMP)}
-+ totalPrice: Money {NotNull}
-+ paid: Boolean {NotNull}
++ referenciaEx: String {Unique, NotBlank, Pattern}
++ deadlineEx: Date {NotBlank, Past, Temporal(TIMESTAMP)}
++ totalPriceEx: Money {NotNull}
++ paidEx: Boolean {NotNull}
 </panel_attributes>
     <additional_attributes/>
   </element>
