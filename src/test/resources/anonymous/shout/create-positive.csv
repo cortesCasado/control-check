@@ -1,3 +1,3 @@
-id,version,author,text,info,receipt_reference,receipt_deadline,receipt_totalPrice,receipt_paid
-0,0,First Creator,Texto con EUR sin enlace con paid true,,98,2021/02/15 19:39,EUR 300.98,true
-0,0,Second Creator,Texto con USD con enlace con paid false,https://ev.us.es/,99,2021/02/15 19:39,"USD 1,200.98",false
+id,version,author,text,info,receiptEx_referenciaEx,receiptEx_deadlineEx,receiptEx_totalPriceEx,receiptEx_paidEx
+0,0,First Creator,Texto con EUR sin enlace con paidEx true,,98,2021/02/15 19:39,EUR 300.98,true
+0,0,Second Creator,Texto con USD con enlace con paidEx false,https://ev.us.es/,99,2021/02/15 19:39,"USD 1,200.98",false

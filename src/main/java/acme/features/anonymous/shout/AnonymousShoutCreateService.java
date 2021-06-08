@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import acme.components.Spam.AnonymousSpamRepository;
 import acme.components.Spam.Spam1;
-import acme.entities.receipt.Receipt;
+import acme.entities.receiptEx.ReceiptEx;
 import acme.entities.shouts.Shout;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -53,11 +53,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		Calendar c = Calendar.getInstance();
 		c.setTime(entity.getMoment());
 
-		model.setAttribute("referencePlaceholder", AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}");
+		model.setAttribute("referenciaExPlaceholder", AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " [0-9]{2}");
 
-		request.unbind(entity, model, "author", "text", "link", "receipt.reference",
-			//			"receipt.deadline", 
-			"receipt.totalPrice", "receipt.paid");
+
+		request.unbind(entity, model, "author", "text", "link", "receiptEx.referenciaEx",
+			//			"receiptEx.deadlineEx", 
+			"receiptEx.totalPriceEx", "receiptEx.paidEx");
 	}
 
 	@Override
@@ -72,12 +73,12 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		result.setMoment(moment);
 		result.setLink("");
 
-		Receipt receipt = new Receipt();
-		receipt.setPaid(Boolean.FALSE);
-		receipt.setDeadline(moment);
+		ReceiptEx receiptEx = new ReceiptEx();
+		receiptEx.setPaidEx(Boolean.FALSE);
+		receiptEx.setDeadlineEx(moment);
 
-		result.setReceipt(receipt);
-		receipt.setShout(result);
+		result.setReceiptEx(receiptEx);
+		receiptEx.setShout(result);
 
 		return result;
 
@@ -89,28 +90,35 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 		assert errors != null;
 
-		final Receipt receipt = entity.getReceipt();
+		final ReceiptEx receiptEx = entity.getReceiptEx();
 
-		String s = receipt.getReference();
+		String s = receiptEx.getReferenciaEx();
 		
 		Calendar c = Calendar.getInstance();
 		c.setTime(entity.getMoment());
 
-		String regExp = AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}";
+		String regExp = AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " [0-9]{2}";
 
 		if (s != null) {
 			final boolean matchRegExp = s.matches(regExp);
-			errors.state(request, matchRegExp, "receipt.reference", "anonymous.shout.form.error.receipt.referenceRegExp");
+			errors.state(request, matchRegExp, "receiptEx.referenciaEx", "anonymous.shout.form.error.receiptEx.referenciaExRegExp");
 
-			final boolean uniqueId = this.shoutRepository.findReferences().stream().noneMatch(r -> r.equals(s));
-			errors.state(request, uniqueId, "receipt.reference", "anonymous.shout.form.error.receipt.referenceUnique");
+			final boolean uniqueId = this.shoutRepository.findReferenciaExs().stream().noneMatch(r -> r.equals(s));
+			errors.state(request, uniqueId, "receiptEx.referenciaEx", "anonymous.shout.form.error.receiptEx.referenciaExUnique");
 		}
 		
-		Money m = receipt.getTotalPrice();
+		Date d = receiptEx.getDeadlineEx();
+		
+		if (d != null) {
+			final boolean dNotAllowed = d.after(entity.getMoment());
+			errors.state(request, dNotAllowed, "receiptEx.deadlineEx", "anonymous.shout.form.error.receiptEx.deadlineEx");
+		}
+		
+		Money m = receiptEx.getTotalPriceEx();
 
 		if (m != null) {
 			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
-			errors.state(request, notAllowedCurrency, "receipt.totalPrice", "anonymous.shout.form.error.receipt.totalPrice");
+			errors.state(request, notAllowedCurrency, "receiptEx.totalPriceEx", "anonymous.shout.form.error.receiptEx.totalPriceEx");
 		}
 
 		if (!entity.getAuthor().isEmpty()) {
@@ -124,7 +132,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		}
 		
 		if (errors.hasErrors()) {
-			request.getModel().setAttribute("referencePlaceholder", regExp);
+			request.getModel().setAttribute("referenciaExPlaceholder", regExp);
 		}
 
 	}
@@ -135,11 +143,11 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert entity != null;
 
 		this.shoutRepository.save(entity);
-		this.shoutRepository.save(entity.getReceipt());
+		this.shoutRepository.save(entity.getReceiptEx());
 
 	}
 
-	public static String getReferenceRegExp(Calendar c, String separator) {
+	public static String getReferenciaExRegExp(Calendar c, String separator) {
 		String day = String.valueOf(c.get(Calendar.DAY_OF_MONTH));
 		String month = String.valueOf(c.get(Calendar.MONTH) + 1);
 		String year = String.valueOf(c.get(Calendar.YEAR));

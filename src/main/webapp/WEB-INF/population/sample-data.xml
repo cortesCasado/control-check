@@ -17,14 +17,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="receipt1" />
+		<property name="receiptEx" ref="receiptEx1" />
 	</bean>
 
-	<bean name="receipt1" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="01-06-2021 01" />
-		<property name="deadline" value="2021/06/01 19:39" />
-		<property name="totalPrice" value="EUR 100.98" />
-		<property name="paid" value="true" />
+	<bean name="receiptEx1" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="01-06-2021 01" />
+		<property name="deadlineEx" value="2021/06/01 19:39" />
+		<property name="totalPriceEx" value="EUR 100.98" />
+		<property name="paidEx" value="true" />
 		<property name="shout" ref="shout1" />
 	</bean>
 
@@ -37,14 +37,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="receipt2" />
+		<property name="receiptEx" ref="receiptEx2" />
 	</bean>
 
-	<bean name="receipt2" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="02-06-2021 02" />
-		<property name="deadline" value="2021/06/02 19:40" />
-		<property name="totalPrice" value="EUR 500.98" />
-		<property name="paid" value="true" />
+	<bean name="receiptEx2" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="02-06-2021 02" />
+		<property name="deadlineEx" value="2021/06/02 19:40" />
+		<property name="totalPriceEx" value="EUR 500.98" />
+		<property name="paidEx" value="true" />
 		<property name="shout" ref="shout2" />
 	</bean>
 
@@ -59,14 +59,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="receipt3" />
+		<property name="receiptEx" ref="receiptEx3" />
 	</bean>
 
-	<bean name="receipt3" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="03-06-2021 03" />
-		<property name="deadline" value="2021/06/03 19:41" />
-		<property name="totalPrice" value="USD 700.98" />
-		<property name="paid" value="false" />
+	<bean name="receiptEx3" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="03-06-2021 03" />
+		<property name="deadlineEx" value="2021/06/03 19:41" />
+		<property name="totalPriceEx" value="USD 700.98" />
+		<property name="paidEx" value="false" />
 		<property name="shout" ref="shout3" />
 	</bean>
 
@@ -77,14 +77,14 @@
 		<property name="author" value="Jaime Benjumea" />
 		<property name="text" value="Notas provisionales publicadas" />
 		<property name="link" value="https://ev.us.es/" />
-		<property name="receipt" ref="receipt4" />
+		<property name="receiptEx" ref="receiptEx4" />
 	</bean>
 
-	<bean name="receipt4" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="04-06-2021 04" />
-		<property name="deadline" value="2021/06/04 00:39" />
-		<property name="totalPrice" value="EUR 200.98" />
-		<property name="paid" value="true" />
+	<bean name="receiptEx4" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="04-06-2021 04" />
+		<property name="deadlineEx" value="2021/06/04 00:39" />
+		<property name="totalPriceEx" value="EUR 200.98" />
+		<property name="paidEx" value="true" />
 		<property name="shout" ref="shout4" />
 	</bean>
 
@@ -98,14 +98,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="receipt5" />
+		<property name="receiptEx" ref="receiptEx5" />
 	</bean>
 
-	<bean name="receipt5" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="04-06-2021 05" />
-		<property name="deadline" value="2021/06/04 01:23" />
-		<property name="totalPrice" value="EUR 300.98" />
-		<property name="paid" value="true" />
+	<bean name="receiptEx5" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="04-06-2021 05" />
+		<property name="deadlineEx" value="2021/06/04 01:23" />
+		<property name="totalPriceEx" value="EUR 300.98" />
+		<property name="paidEx" value="true" />
 		<property name="shout" ref="shout5" />
 	</bean>
 
@@ -116,14 +116,14 @@
 		<property name="author" value="Javier Cortés" />
 		<property name="text" value="Dudas sobre exámenes" />
 		<property name="link" value="https://www.stackoverflow.com/" />
-		<property name="receipt" ref="receipt6" />
+		<property name="receiptEx" ref="receiptEx6" />
 	</bean>
 
-	<bean name="receipt6" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="03-06-2021 06" />
-		<property name="deadline" value="2021/06/03 19:41" />
-		<property name="totalPrice" value="USD 320.98" />
-		<property name="paid" value="false" />
+	<bean name="receiptEx6" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="03-06-2021 06" />
+		<property name="deadlineEx" value="2021/06/03 19:41" />
+		<property name="totalPriceEx" value="USD 320.98" />
+		<property name="paidEx" value="false" />
 		<property name="shout" ref="shout6" />
 	</bean>
 
@@ -136,14 +136,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receipt" ref="receipt7" />
+		<property name="receiptEx" ref="receiptEx7" />
 	</bean>
 
-	<bean name="receipt7" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="02-06-2021 07" />
-		<property name="deadline" value="2021/06/02 19:39" />
-		<property name="totalPrice" value="EUR 430.98" />
-		<property name="paid" value="true" />
+	<bean name="receiptEx7" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="02-06-2021 07" />
+		<property name="deadlineEx" value="2021/06/02 19:39" />
+		<property name="totalPriceEx" value="EUR 430.98" />
+		<property name="paidEx" value="true" />
 		<property name="shout" ref="shout7" />
 	</bean>
 
@@ -154,14 +154,14 @@
 		<property name="author" value="Antonio Rojas" />
 		<property name="text" value="Probando funcionalidades" />
 		<property name="link" value="https://www.example.com" />
-		<property name="receipt" ref="receipt8" />
+		<property name="receiptEx" ref="receiptEx8" />
 	</bean>
 
-	<bean name="receipt8" class="acme.entities.receipt.Receipt">
-		<property name="reference" value="01-06-2021 08" />
-		<property name="deadline" value="2021/06/01 19:40" />
-		<property name="totalPrice" value="EUR 1500.98" />
-		<property name="paid" value="true" />
+	<bean name="receiptEx8" class="acme.entities.receiptEx.ReceiptEx">
+		<property name="referenciaEx" value="01-06-2021 08" />
+		<property name="deadlineEx" value="2021/06/01 19:40" />
+		<property name="totalPriceEx" value="EUR 1500.98" />
+		<property name="paidEx" value="true" />
 		<property name="shout" ref="shout8" />
 	</bean>
 
