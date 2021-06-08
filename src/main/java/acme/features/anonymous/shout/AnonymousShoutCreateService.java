@@ -55,6 +55,7 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		model.setAttribute("referenciaExPlaceholder", AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " [0-9]{2}");
 
+
 		request.unbind(entity, model, "author", "text", "link", "receiptEx.referenciaEx",
 			//			"receiptEx.deadlineEx", 
 			"receiptEx.totalPriceEx", "receiptEx.paidEx");

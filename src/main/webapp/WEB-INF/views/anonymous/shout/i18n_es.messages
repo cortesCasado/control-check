@@ -20,11 +20,11 @@ anonymous.shout.form.label.receiptEx.deadlineEx = DeadlineEx:
 anonymous.shout.form.label.receiptEx.totalPriceEx = Precio total:
 anonymous.shout.form.label.receiptEx.paidEx = Pagada:
 
-
 anonymous.shout.form.error.receiptEx.totalPriceEx = Divisa no permitida, solo se admiten EUR o USD
 anonymous.shout.form.error.receiptEx.totalPriceEx = La fecha de limite debe ser en el futuro
 anonymous.shout.form.error.receiptEx.referenciaExRegExp = La refencia debe encajar con el patrón proporcionado
 anonymous.shout.form.error.receiptEx.referenciaExUnique = No pueden existir dos referencias iguales
+
 
 
 
