@@ -55,23 +55,18 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		model.setAttribute("referencePlaceholder", AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}");
 
-		request.unbind(entity, model, "author", "text", "link", 
-			"receipt.reference",
-//			"receipt.deadline", 
-			"receipt.totalPrice", 
-			"receipt.paid");
+		request.unbind(entity, model, "author", "text", "link", "receipt.reference",
+			//			"receipt.deadline", 
+			"receipt.totalPrice", "receipt.paid");
 	}
 
 	@Override
 	public Shout instantiate(final Request<Shout> request) {
 		assert request != null;
 
-		Shout result;
-		Date moment;
+		Shout result = new Shout();
+		Date moment = new Date(System.currentTimeMillis() - 1);
 
-		moment = new Date(System.currentTimeMillis() - 1);
-
-		result = new Shout();
 		result.setAuthor("");
 		result.setText("");
 		result.setMoment(moment);
@@ -96,30 +91,26 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 
 		final Receipt receipt = entity.getReceipt();
 
+		String s = receipt.getReference();
+		
+		Calendar c = Calendar.getInstance();
+		c.setTime(entity.getMoment());
+
+		String regExp = AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}";
+
+		if (s != null) {
+			final boolean matchRegExp = s.matches(regExp);
+			errors.state(request, matchRegExp, "receipt.reference", "anonymous.shout.form.error.receipt.referenceRegExp");
+
+			final boolean uniqueId = this.shoutRepository.findReferences().stream().noneMatch(r -> r.equals(s));
+			errors.state(request, uniqueId, "receipt.reference", "anonymous.shout.form.error.receipt.referenceUnique");
+		}
+		
 		Money m = receipt.getTotalPrice();
 
 		if (m != null) {
 			final boolean notAllowedCurrency = m.getCurrency().equals("EUR") || m.getCurrency().equals("USD");
 			errors.state(request, notAllowedCurrency, "receipt.totalPrice", "anonymous.shout.form.error.receipt.totalPrice");
-		}
-
-		String s = receipt.getReference();
-
-		if (s != null) {
-			Calendar c = Calendar.getInstance();
-			c.setTime(entity.getMoment());
-
-			String regExp = AnonymousShoutCreateService.getReferenceRegExp(c, "-") + " [0-9]{2}";
-
-			final boolean matchRegExp = s.matches(regExp);
-			errors.state(request, matchRegExp, "receipt.reference", "anonymous.shout.form.error.receipt.referenceRegExp");
-
-			if (!matchRegExp) {
-				request.getModel().setAttribute("referencePlaceholder", regExp);
-			}
-
-			final boolean uniqueId = this.shoutRepository.findReferences().stream().noneMatch(r -> r.equals(s));
-			errors.state(request, uniqueId, "receipt.reference", "anonymous.shout.form.error.receipt.referenceUnique");
 		}
 
 		if (!entity.getAuthor().isEmpty()) {
@@ -131,6 +122,10 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			final boolean condition2 = !Spam1.isSpam(entity.getText(), this.spamRepository.findSpam());
 			errors.state(request, condition2, "text", "anonymous.shout.form.error.text");
 		}
+		
+		if (errors.hasErrors()) {
+			request.getModel().setAttribute("referencePlaceholder", regExp);
+		}
 
 	}
 
@@ -138,10 +133,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 	public void create(final Request<Shout> request, final Shout entity) {
 		assert request != null;
 		assert entity != null;
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setMoment(moment);
 
 		this.shoutRepository.save(entity);
 		this.shoutRepository.save(entity.getReceipt());
@@ -157,12 +148,6 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			day = "0" + day;
 		if (month.length() == 1)
 			month = "0" + month;
-
-		StringBuilder bld = new StringBuilder(year);
-		for (int i = year.length(); i < 4; ++i) {
-			bld.insert(0, "0");
-		}
-		year = bld.toString();
 
 		return day + separator + month + separator + year;
 	}
