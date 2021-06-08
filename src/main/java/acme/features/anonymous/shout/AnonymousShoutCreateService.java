@@ -106,6 +106,13 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 			errors.state(request, uniqueId, "receiptEx.referenciaEx", "anonymous.shout.form.error.receiptEx.referenciaExUnique");
 		}
 		
+		Date d = receiptEx.getDeadlineEx();
+		
+		if (d != null) {
+			final boolean dNotAllowed = d.after(entity.getMoment());
+			errors.state(request, dNotAllowed, "receiptEx.deadlineEx", "anonymous.shout.form.error.receiptEx.deadlineEx");
+		}
+		
 		Money m = receiptEx.getTotalPriceEx();
 
 		if (m != null) {
