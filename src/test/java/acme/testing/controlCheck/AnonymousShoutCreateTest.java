@@ -20,8 +20,8 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void createPositive(final int id, final int version, final String author, final String text, final String info, 
-		final String receipt_referenciaEx, final String receipt_deadlineEx, final String receipt_totalPriceEx, 
-		final String receipt_paidEx) {
+		final String receiptEx_referenciaEx, final String receiptEx_deadlineEx, final String receiptEx_totalPriceEx, 
+		final String receiptEx_paidEx) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
 		super.fillInputBoxIn("author", author);
@@ -30,12 +30,12 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		
 		Calendar c = Calendar.getInstance();
 		c.setTime(new Date(System.currentTimeMillis() - 1));
-		String referenciaEx = AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " " + receipt_referenciaEx;
+		String referenciaEx = AnonymousShoutCreateService.getReferenciaExRegExp(c, "-") + " " + receiptEx_referenciaEx;
 		
-		super.fillInputBoxIn("receipt.referenciaEx", referenciaEx);
-//		super.fillInputBoxIn("receipt.deadlineEx", receipt_deadlineEx);
-		super.fillInputBoxIn("receipt.totalPriceEx", receipt_totalPriceEx);
-		super.fillInputBoxIn("receipt.paidEx", receipt_paidEx);
+		super.fillInputBoxIn("receiptEx.referenciaEx", referenciaEx);
+//		super.fillInputBoxIn("receiptEx.deadlineEx", receiptEx_deadlineEx);
+		super.fillInputBoxIn("receiptEx.totalPriceEx", receiptEx_totalPriceEx);
+		super.fillInputBoxIn("receiptEx.paidEx", receiptEx_paidEx);
 
 		super.clickOnSubmitButton("Shout!");
 
@@ -45,9 +45,9 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 2, text);
 		super.checkColumnHasValue(id, 3, info);
 		super.checkColumnHasValue(id, 4, referenciaEx);
-//		super.checkColumnHasValue(id, 5, receipt_deadlineEx);
-		super.checkColumnHasValue(id, 6, receipt_totalPriceEx);
-		super.checkColumnHasValue(id, 7, receipt_paidEx);
+//		super.checkColumnHasValue(id, 5, receiptEx_deadlineEx);
+		super.checkColumnHasValue(id, 6, receiptEx_totalPriceEx);
+		super.checkColumnHasValue(id, 7, receiptEx_paidEx);
 
 	}
 
@@ -58,26 +58,26 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void createNegative(final int id, final int version, final String author, final String text, final String info, 
-		final String receipt_referenciaEx, final String receipt_deadlineEx, final String receipt_totalPriceEx, 
-		final String receipt_paidEx) {
+		final String receiptEx_referenciaEx, final String receiptEx_deadlineEx, final String receiptEx_totalPriceEx, 
+		final String receiptEx_paidEx) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("link", info);
-		super.fillInputBoxIn("receipt.referenciaEx", receipt_referenciaEx);
-//		super.fillInputBoxIn("receipt.deadlineEx", receipt_deadlineEx);
-		super.fillInputBoxIn("receipt.totalPriceEx", receipt_totalPriceEx);
-		super.fillInputBoxIn("receipt.paidEx", receipt_paidEx);
+		super.fillInputBoxIn("receiptEx.referenciaEx", receiptEx_referenciaEx);
+//		super.fillInputBoxIn("receiptEx.deadlineEx", receiptEx_deadlineEx);
+		super.fillInputBoxIn("receiptEx.totalPriceEx", receiptEx_totalPriceEx);
+		super.fillInputBoxIn("receiptEx.paidEx", receiptEx_paidEx);
 
 		super.clickOnSubmitButton("Shout!");
 
 		super.checkErrorsExist("author");
 		super.checkErrorsExist("text");
 		super.checkErrorsExist("link");
-		super.checkErrorsExist("receipt.referenciaEx");
-//		super.checkErrorsExist("receipt.deadlineEx");
-		super.checkErrorsExist("receipt.totalPriceEx");
+		super.checkErrorsExist("receiptEx.referenciaEx");
+//		super.checkErrorsExist("receiptEx.deadlineEx");
+		super.checkErrorsExist("receiptEx.totalPriceEx");
 
 	}
 }

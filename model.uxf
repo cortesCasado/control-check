@@ -612,7 +612,7 @@ Shout
       <h>117</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Entity&gt;&gt;
-Receipt
+ReceiptEx
 --
 + referenciaEx: String {Unique, NotBlank, Pattern}
 + deadlineEx: Date {NotBlank, Past, Temporal(TIMESTAMP)}

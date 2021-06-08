@@ -17,18 +17,18 @@ public class AnonymousShoutListTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/list.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void listRecentShoutsByMoment(final int id, final int version, String moment, final String author, final String text, final String info, 
-		final String receipt_referenciaEx, final String receipt_deadlineEx, final String receipt_totalPriceEx,
-		final String receipt_paidEx) {
+		final String receiptEx_referenciaEx, final String receiptEx_deadlineEx, final String receiptEx_totalPriceEx,
+		final String receiptEx_paidEx) {
 		super.clickOnMenu("Anonymous", "List shouts");
 
 		super.checkColumnHasValue(id, 0, moment);
 		super.checkColumnHasValue(id, 1, author);
 		super.checkColumnHasValue(id, 2, text);
 		super.checkColumnHasValue(id, 3, info);
-		super.checkColumnHasValue(id, 4, receipt_referenciaEx);
-//		super.checkColumnHasValue(id, 5, receipt_deadlineEx);
-		super.checkColumnHasValue(id, 6, receipt_totalPriceEx);
-		super.checkColumnHasValue(id, 7, receipt_paidEx);
+		super.checkColumnHasValue(id, 4, receiptEx_referenciaEx);
+//		super.checkColumnHasValue(id, 5, receiptEx_deadlineEx);
+		super.checkColumnHasValue(id, 6, receiptEx_totalPriceEx);
+		super.checkColumnHasValue(id, 7, receiptEx_paidEx);
 	}
 
 	/**

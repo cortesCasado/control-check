@@ -1,4 +1,4 @@
-package acme.entities.receipt;
+package acme.entities.receiptEx;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Receipt extends DomainEntity {
+public class ReceiptEx extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
