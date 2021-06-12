@@ -3,8 +3,8 @@ administrator.dashboard.entities.title.show = Panel de indicadores
 
 administrator.dashboard.entities.title.shouts-indicators = Estadísticas sobre los gritos
 
-administrator.dashboard.entities.label.flaggedAs = Gritos marcados como pagados
-administrator.dashboard.entities.label.ratioOfShouts = Porcentaje de gritos cuya fecha limite ha pasado
+administrator.dashboard.entities.label.flaggedAs = Porcentaje de gritos marcados como importantes
+administrator.dashboard.entities.label.ratioOfShouts = Porcentaje de gritos cuyo presupuesto es 0
 
 administrator.dashboard.entities.label.avgMoneyCurrency1 = Media de EUR asociados a gritos
 administrator.dashboard.entities.label.dvtMoneyCurrency1 =  Desviación típica de EUR asociados a gritos

@@ -8,8 +8,8 @@
 	<acme:list-column code="anonymous.shout.list.label.author" path="author" width="20%"/>
 	<acme:list-column code="anonymous.shout.list.label.text" path="text" width="20%"/>
 	<acme:list-column code="anonymous.shout.list.label.link" path="link" width="20%"/>
-	<acme:list-column code="anonymous.shout.list.label.receiptEx.referenciaEx" path="receiptEx.referenciaEx"/>
-	<acme:list-column code="anonymous.shout.list.label.receiptEx.deadlineEx" path="receiptEx.deadlineEx"/>
-	<acme:list-column code="anonymous.shout.list.label.receiptEx.totalPriceEx" path="receiptEx.totalPriceEx"/>
-	<acme:list-column code="anonymous.shout.list.label.receiptEx.paidEx" path="receiptEx.paidEx"/>
+	<acme:list-column code="anonymous.shout.list.label.somp.code" path="somp.code"/>
+	<acme:list-column code="anonymous.shout.list.label.somp.deadline" path="somp.deadline"/>
+	<acme:list-column code="anonymous.shout.list.label.somp.budget" path="somp.budget"/>
+	<acme:list-column code="anonymous.shout.list.label.somp.important" path="somp.important"/>
 </acme:list>

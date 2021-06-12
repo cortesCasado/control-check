@@ -35,7 +35,7 @@ public class AnonymousShoutListService implements AbstractListService<Anonymous,
 		assert model != null;
 		
 		request.unbind(entity, model, "author", "text", "moment", "link",
-			"receiptEx.referenciaEx","receiptEx.deadlineEx","receiptEx.totalPriceEx","receiptEx.paidEx");
+			"somp.code","somp.deadline","somp.budget","somp.important");
 	
 	}
 

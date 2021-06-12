@@ -15,22 +15,22 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	
 	//Control check
 	
-	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM ReceiptEx j) FROM ReceiptEx i WHERE i.paidEx = true")
+	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM Somp j) FROM Somp i WHERE i.important = true")
 	Double flaggedAs();
 
-	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM ReceiptEx j) FROM ReceiptEx i WHERE i.totalPriceEx.amount >= 500 AND i.totalPriceEx.currency = 'EUR'")
+	@Query("SELECT 100.00 * COUNT(i) / (SELECT COUNT(j) FROM Somp j) FROM Somp i WHERE i.budget.amount = 0")
 	Double ratioOfShouts();
 
-	@Query("SELECT AVG(i.totalPriceEx.amount) FROM ReceiptEx i WHERE i.totalPriceEx.currency = 'EUR'")
+	@Query("SELECT AVG(i.budget.amount) FROM Somp i WHERE i.budget.currency = 'EUR'")
 	Double avgMoneyCurrency1();
 
-	@Query("SELECT STDDEV(i.totalPriceEx.amount) FROM ReceiptEx i WHERE i.totalPriceEx.currency = 'EUR'")
+	@Query("SELECT STDDEV(i.budget.amount) FROM Somp i WHERE i.budget.currency = 'EUR'")
 	Double dvtMoneyCurrency1();
 
-	@Query("SELECT AVG(i.totalPriceEx.amount) FROM ReceiptEx i WHERE i.totalPriceEx.currency = 'USD'")
+	@Query("SELECT AVG(i.budget.amount) FROM Somp i WHERE i.budget.currency = 'USD'")
 	Double avgMoneyCurrency2();
 
-	@Query("SELECT STDDEV(i.totalPriceEx.amount) FROM ReceiptEx i WHERE i.totalPriceEx.currency = 'USD'")
+	@Query("SELECT STDDEV(i.budget.amount) FROM Somp i WHERE i.budget.currency = 'USD'")
 	Double dvtMoneyCurrency2();
 	
 

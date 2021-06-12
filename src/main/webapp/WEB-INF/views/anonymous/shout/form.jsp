@@ -8,10 +8,10 @@
 	<acme:form-textarea code="anonymous.shout.form.label.text" path="text" placeholder="This is an example text"/>
 	<acme:form-textbox code="anonymous.shout.form.label.link" path="link" placeholder="http://wwww.ebiblioteca.org"/>
 	
-	<acme:form-textbox code="anonymous.shout.form.label.receiptEx.referenciaEx" path="receiptEx.referenciaEx" placeholder="${referenciaExPlaceholder}" />
-<%-- 	<acme:form-moment code="anonymous.shout.form.label.receiptEx.deadlineEx" path="receiptEx.deadlineEx"/> --%>
-	<acme:form-money code="anonymous.shout.form.label.receiptEx.totalPriceEx" path="receiptEx.totalPriceEx"/>
-	<acme:form-checkbox code="anonymous.shout.form.label.receiptEx.paidEx" path="receiptEx.paidEx"/>
+	<acme:form-textbox code="anonymous.shout.form.label.somp.code" path="somp.code" placeholder="${codePlaceholder}" />
+	<acme:form-moment code="anonymous.shout.form.label.somp.deadline" path="somp.deadline"/>
+	<acme:form-money code="anonymous.shout.form.label.somp.budget" path="somp.budget"/>
+	<acme:form-checkbox code="anonymous.shout.form.label.somp.important" path="somp.important"/>
 	
 	<acme:form-submit code="anonymous.shout.form.button.create" action="/anonymous/shout/create"/>
 	<acme:form-return code="anonymous.shout.form.button.return"/>

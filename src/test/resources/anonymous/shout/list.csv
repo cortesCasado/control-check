@@ -1,9 +1,9 @@
-id,version,moment,author,text,info,receiptEx_referenciaEx,receiptEx_deadlineEx,receiptEx_totalPriceEx,receiptEx_paidEx
-0,0,2021/06/04 01:23,Rafael Nadal,Sorteo de dos entradas para Mutua Madrid Open,,04-06-2021 05,2021/02/15 19:39,EUR 300.98,true
-1,0,2021/06/04 00:39,Jaime Benjumea,Notas provisionales publicadas,https://ev.us.es/,04-06-2021 04,2021/02/15 19:39,EUR 200.98,true
-2,0,2021/06/03 19:41,Patricia Jimenez,Announcing next monday follow up,,03-06-2021 03,2021/02/15 19:39,USD 700.98,false
-3,0,2021/06/03 19:41,Javier Cortés,Dudas sobre exámenes,https://www.stackoverflow.com/,03-06-2021 06,2021/02/15 19:39,USD 320.98,false
-4,0,2021/06/02 19:40,Rafael Corchuelo,Good luck!,,02-06-2021 02,2021/02/15 19:39,EUR 500.98,true
-5,0,2021/06/02 19:39,Alvaro Cortés,Control check is coming,,02-06-2021 07,2021/02/15 19:39,EUR 430.98,true
-6,0,2021/06/01 19:40,Antonio Rojas,Probando funcionalidades,https://www.example.com,01-06-2021 08,2021/02/15 19:39,"EUR 1,500.98",true
-7,0,2021/06/01 19:39,Alvaro Cortés,Using new info sheet property with EUR,,01-06-2021 01,2021/02/15 19:39,EUR 100.98,true
+id,version,moment,author,text,info,somp_code,somp_deadline,somp_budget,somp_important
+0,0,2021/06/04 01:23,Rafael Nadal,Sorteo de dos entradas para Mutua Madrid Open,,sh5-210604-s5,2021/06/13 01:23,EUR 300.98,true
+1,0,2021/06/04 00:39,Jaime Benjumea,Notas provisionales publicadas,https://ev.us.es/,sh4-210604-s4,2021/06/20 00:39,EUR 200.98,true
+2,0,2021/06/03 19:41,Patricia Jimenez,Announcing next monday follow up,,sh3-210603-s3,2021/07/03 19:41,USD 700.98,false
+3,0,2021/06/03 19:41,Javier Cortés,Dudas sobre exámenes,https://www.stackoverflow.com/,sh6-210603-s6,2021/06/11 19:41,USD 0.00,false
+4,0,2021/06/02 19:40,Rafael Corchuelo,Good luck!,,sh2-210602-s2,2021/06/09 19:40,EUR 500.98,true
+5,0,2021/06/02 19:39,Alvaro Cortés,Control check is coming,,sh7-210602-s7,2021/06/10 19:39,EUR 430.98,true
+6,0,2021/06/01 19:40,Antonio Rojas,Probando funcionalidades,https://www.example.com,sh8-210601-s8,2021/06/09 19:40,"EUR 1,500.98",true
+7,0,2021/06/01 19:39,Alvaro Cortés,Using new info sheet property with EUR,,sh1-210601-s1,2021/06/08 19:39,EUR 100.98,true

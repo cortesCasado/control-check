@@ -3,8 +3,8 @@ administrator.dashboard.entities.title.show = Dashboard
 
 administrator.dashboard.entities.title.shouts-indicators = Shout indicators
 
-administrator.dashboard.entities.label.flaggedAs = Shouts flagged as paidEx
-administrator.dashboard.entities.label.ratioOfShouts = Ratio of shouts whose deadlineEx has expired
+administrator.dashboard.entities.label.flaggedAs = Shouts flagged as important
+administrator.dashboard.entities.label.ratioOfShouts = Ratio of shouts whose budget is 0
 
 administrator.dashboard.entities.label.avgMoneyCurrency1 = Average EUR associated to shouts 
 administrator.dashboard.entities.label.dvtMoneyCurrency1 =  Standard deviation EUR associated to shouts

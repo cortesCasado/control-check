@@ -17,14 +17,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receiptEx" ref="receiptEx1" />
+		<property name="somp" ref="somp1" />
 	</bean>
 
-	<bean name="receiptEx1" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="01-06-2021 01" />
-		<property name="deadlineEx" value="2021/06/01 19:39" />
-		<property name="totalPriceEx" value="EUR 100.98" />
-		<property name="paidEx" value="true" />
+	<bean name="somp1" class="acme.entities.somp.Somp">
+		<property name="code" value="sh1-210601-s1" />
+		<property name="deadline" value="2021/06/08 19:39" />
+		<property name="budget" value="EUR 100.98" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shout1" />
 	</bean>
 
@@ -37,14 +37,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receiptEx" ref="receiptEx2" />
+		<property name="somp" ref="somp2" />
 	</bean>
 
-	<bean name="receiptEx2" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="02-06-2021 02" />
-		<property name="deadlineEx" value="2021/06/02 19:40" />
-		<property name="totalPriceEx" value="EUR 500.98" />
-		<property name="paidEx" value="true" />
+	<bean name="somp2" class="acme.entities.somp.Somp">
+		<property name="code" value="sh2-210602-s2" />
+		<property name="deadline" value="2021/06/09 19:40" />
+		<property name="budget" value="EUR 500.98" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shout2" />
 	</bean>
 
@@ -59,14 +59,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receiptEx" ref="receiptEx3" />
+		<property name="somp" ref="somp3" />
 	</bean>
 
-	<bean name="receiptEx3" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="03-06-2021 03" />
-		<property name="deadlineEx" value="2021/06/03 19:41" />
-		<property name="totalPriceEx" value="USD 700.98" />
-		<property name="paidEx" value="false" />
+	<bean name="somp3" class="acme.entities.somp.Somp">
+		<property name="code" value="sh3-210603-s3" />
+		<property name="deadline" value="2021/07/03 19:41" />
+		<property name="budget" value="USD 700.98" />
+		<property name="important" value="false" />
 		<property name="shout" ref="shout3" />
 	</bean>
 
@@ -77,14 +77,14 @@
 		<property name="author" value="Jaime Benjumea" />
 		<property name="text" value="Notas provisionales publicadas" />
 		<property name="link" value="https://ev.us.es/" />
-		<property name="receiptEx" ref="receiptEx4" />
+		<property name="somp" ref="somp4" />
 	</bean>
 
-	<bean name="receiptEx4" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="04-06-2021 04" />
-		<property name="deadlineEx" value="2021/06/04 00:39" />
-		<property name="totalPriceEx" value="EUR 200.98" />
-		<property name="paidEx" value="true" />
+	<bean name="somp4" class="acme.entities.somp.Somp">
+		<property name="code" value="sh4-210604-s4" />
+		<property name="deadline" value="2021/06/20 00:39" />
+		<property name="budget" value="EUR 200.98" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shout4" />
 	</bean>
 
@@ -98,14 +98,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receiptEx" ref="receiptEx5" />
+		<property name="somp" ref="somp5" />
 	</bean>
 
-	<bean name="receiptEx5" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="04-06-2021 05" />
-		<property name="deadlineEx" value="2021/06/04 01:23" />
-		<property name="totalPriceEx" value="EUR 300.98" />
-		<property name="paidEx" value="true" />
+	<bean name="somp5" class="acme.entities.somp.Somp">
+		<property name="code" value="sh5-210604-s5" />
+		<property name="deadline" value="2021/06/13 01:23" />
+		<property name="budget" value="EUR 300.98" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shout5" />
 	</bean>
 
@@ -116,14 +116,14 @@
 		<property name="author" value="Javier Cortés" />
 		<property name="text" value="Dudas sobre exámenes" />
 		<property name="link" value="https://www.stackoverflow.com/" />
-		<property name="receiptEx" ref="receiptEx6" />
+		<property name="somp" ref="somp6" />
 	</bean>
 
-	<bean name="receiptEx6" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="03-06-2021 06" />
-		<property name="deadlineEx" value="2021/06/03 19:41" />
-		<property name="totalPriceEx" value="USD 320.98" />
-		<property name="paidEx" value="false" />
+	<bean name="somp6" class="acme.entities.somp.Somp">
+		<property name="code" value="sh6-210603-s6" />
+		<property name="deadline" value="2021/06/11 19:41" />
+		<property name="budget" value="USD 0" />
+		<property name="important" value="false" />
 		<property name="shout" ref="shout6" />
 	</bean>
 
@@ -136,14 +136,14 @@
 		<property name="link">
 			<null />
 		</property>
-		<property name="receiptEx" ref="receiptEx7" />
+		<property name="somp" ref="somp7" />
 	</bean>
 
-	<bean name="receiptEx7" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="02-06-2021 07" />
-		<property name="deadlineEx" value="2021/06/02 19:39" />
-		<property name="totalPriceEx" value="EUR 430.98" />
-		<property name="paidEx" value="true" />
+	<bean name="somp7" class="acme.entities.somp.Somp">
+		<property name="code" value="sh7-210602-s7" />
+		<property name="deadline" value="2021/06/10 19:39" />
+		<property name="budget" value="EUR 430.98" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shout7" />
 	</bean>
 
@@ -154,14 +154,14 @@
 		<property name="author" value="Antonio Rojas" />
 		<property name="text" value="Probando funcionalidades" />
 		<property name="link" value="https://www.example.com" />
-		<property name="receiptEx" ref="receiptEx8" />
+		<property name="somp" ref="somp8" />
 	</bean>
 
-	<bean name="receiptEx8" class="acme.entities.receiptEx.ReceiptEx">
-		<property name="referenciaEx" value="01-06-2021 08" />
-		<property name="deadlineEx" value="2021/06/01 19:40" />
-		<property name="totalPriceEx" value="EUR 1500.98" />
-		<property name="paidEx" value="true" />
+	<bean name="somp8" class="acme.entities.somp.Somp">
+		<property name="code" value="sh8-210601-s8" />
+		<property name="deadline" value="2021/06/09 19:40" />
+		<property name="budget" value="EUR 1500.98" />
+		<property name="important" value="true" />
 		<property name="shout" ref="shout8" />
 	</bean>
 

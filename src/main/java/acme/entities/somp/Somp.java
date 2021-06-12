@@ -1,4 +1,4 @@
-package acme.entities.receiptEx;
+package acme.entities.somp;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -22,7 +22,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class ReceiptEx extends DomainEntity {
+public class Somp extends DomainEntity {
 
 	// Serialisation identifier -----------------------------------------------
 
@@ -32,32 +32,21 @@ public class ReceiptEx extends DomainEntity {
 	
 	@NotBlank
 	@Column(unique = true)
-	@Pattern(regexp = "[0-3]{1}[0-9]{1}-[0-1]{1}[0-9]{1}-[0-9]{4} [0-9]{2}", message = "Error")
-	protected String			referenciaEx;
-	
+	@Pattern(regexp = "^\\w{3}-[0-9]{2}[0-1]{1}[0-9]{1}[0-3]{1}[0-9]{1}-\\w{2}$", message = "Error")
+	protected String			code;
+		
 	@Temporal(TemporalType.TIMESTAMP)
 	@NotNull
-	protected Date				deadlineEx;
+	protected Date				deadline;
 
 	@NotNull
 	@Valid
-	protected Money				totalPriceEx;
+	protected Money				budget;
 
 	@NotNull
-	protected Boolean			paidEx;
-
+	protected Boolean			important;
 	
-	public void setDeadlineEx(Date deadlineEx) {
-		Calendar c = Calendar.getInstance();
-		c.setTime(deadlineEx);
-		c.add(Calendar.DATE, 15);
-		c.set(Calendar.HOUR, 8);
-		c.set(Calendar.MINUTE, 0);
-		c.set(Calendar.SECOND, 0);
-		this.deadlineEx = c.getTime();
-	}
-	
-	public static String getReferenciaExRegExp(Date d, String separator) {
+	public static String getCodeRegExp(Date d) {
 		Calendar c = Calendar.getInstance();
 		c.setTime(d);
 		
@@ -69,8 +58,9 @@ public class ReceiptEx extends DomainEntity {
 			day = "0" + day;
 		if (month.length() == 1)
 			month = "0" + month;
+		year = year.substring(2);
 
-		return day + separator + month + separator + year;
+		return year + month + day;
 	}
 
 	// Derived attributes -----------------------------------------------------

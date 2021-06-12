@@ -116,7 +116,7 @@ master.license.text = \
 	about you with any other company.  We only use three cookies, namely: \
 	"JSESSIONID" to identify your work session, "remember" to let you authenticate \
 	automatically for a maximum of 31 days, and "language" to store your language \
-	preferenciaExs. Additionally, we store an item called "returnStack" in your browser's \
+	pcodes. Additionally, we store an item called "returnStack" in your browser's \
 	local storage to keep track of the document to which some buttons must return.
 
 # master.panic ################################################################

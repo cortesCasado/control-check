@@ -6,7 +6,7 @@ import java.util.Date;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import acme.entities.receiptEx.ReceiptEx;
+import acme.entities.somp.Somp;
 import acme.testing.AcmePlannerTest;
 
 public class AnonymousShoutCreateTest extends AcmePlannerTest {
@@ -19,8 +19,8 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-positive.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void createPositive(final int id, final int version, final String author, final String text, final String info, 
-		final String receiptEx_referenciaEx, final String receiptEx_deadlineEx, final String receiptEx_totalPriceEx, 
-		final String receiptEx_paidEx) {
+		final String somp_code1, final String somp_code2, final String somp_deadline, final String somp_budget, 
+		final String somp_important) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
 		super.fillInputBoxIn("author", author);
@@ -29,12 +29,12 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		
 		
 		Date d = new Date(System.currentTimeMillis() - 1);
-		String referenciaEx = ReceiptEx.getReferenciaExRegExp(d, receiptEx_paidEx) + " " + receiptEx_referenciaEx;
+		String code = somp_code1 + "-" + Somp.getCodeRegExp(d) + "-" +somp_code2;
 		
-		super.fillInputBoxIn("receiptEx.referenciaEx", referenciaEx);
-//		super.fillInputBoxIn("receiptEx.deadlineEx", receiptEx_deadlineEx);
-		super.fillInputBoxIn("receiptEx.totalPriceEx", receiptEx_totalPriceEx);
-		super.fillInputBoxIn("receiptEx.paidEx", receiptEx_paidEx);
+		super.fillInputBoxIn("somp.code", code);
+		super.fillInputBoxIn("somp.deadline", somp_deadline);
+		super.fillInputBoxIn("somp.budget", somp_budget);
+		super.fillInputBoxIn("somp.important", somp_important);
 
 		super.clickOnSubmitButton("Shout!");
 
@@ -43,10 +43,10 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 		super.checkColumnHasValue(id, 1, author);
 		super.checkColumnHasValue(id, 2, text);
 		super.checkColumnHasValue(id, 3, info);
-		super.checkColumnHasValue(id, 4, referenciaEx);
-//		super.checkColumnHasValue(id, 5, receiptEx_deadlineEx);
-		super.checkColumnHasValue(id, 6, receiptEx_totalPriceEx);
-		super.checkColumnHasValue(id, 7, receiptEx_paidEx);
+		super.checkColumnHasValue(id, 4, code);
+		super.checkColumnHasValue(id, 5, somp_deadline);
+		super.checkColumnHasValue(id, 6, somp_budget);
+		super.checkColumnHasValue(id, 7, somp_important);
 
 	}
 
@@ -57,26 +57,26 @@ public class AnonymousShoutCreateTest extends AcmePlannerTest {
 	@ParameterizedTest
 	@CsvFileSource(resources = "/anonymous/shout/create-negative.csv", encoding = "utf-8", numLinesToSkip = 1)
 	public void createNegative(final int id, final int version, final String author, final String text, final String info, 
-		final String receiptEx_referenciaEx, final String receiptEx_deadlineEx, final String receiptEx_totalPriceEx, 
-		final String receiptEx_paidEx) {
+		final String somp_code, final String somp_deadline, final String somp_budget, 
+		final String somp_important) {
 		super.clickOnMenu("Anonymous", "Shout!");
 
 		super.fillInputBoxIn("author", author);
 		super.fillInputBoxIn("text", text);
 		super.fillInputBoxIn("link", info);
-		super.fillInputBoxIn("receiptEx.referenciaEx", receiptEx_referenciaEx);
-//		super.fillInputBoxIn("receiptEx.deadlineEx", receiptEx_deadlineEx);
-		super.fillInputBoxIn("receiptEx.totalPriceEx", receiptEx_totalPriceEx);
-		super.fillInputBoxIn("receiptEx.paidEx", receiptEx_paidEx);
+		super.fillInputBoxIn("somp.code", somp_code);
+		super.fillInputBoxIn("somp.deadline", somp_deadline);
+		super.fillInputBoxIn("somp.budget", somp_budget);
+		super.fillInputBoxIn("somp.important", somp_important);
 
 		super.clickOnSubmitButton("Shout!");
 
 		super.checkErrorsExist("author");
 		super.checkErrorsExist("text");
 		super.checkErrorsExist("link");
-		super.checkErrorsExist("receiptEx.referenciaEx");
-//		super.checkErrorsExist("receiptEx.deadlineEx");
-		super.checkErrorsExist("receiptEx.totalPriceEx");
+		super.checkErrorsExist("somp.code");
+		super.checkErrorsExist("somp.deadline");
+		super.checkErrorsExist("somp.budget");
 
 	}
 }

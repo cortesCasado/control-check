@@ -8,22 +8,22 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-anonymous.shout.list.label.receiptEx.referenciaEx = Referencia:
-anonymous.shout.list.label.receiptEx.deadlineEx = Fecha límite:
-anonymous.shout.list.label.receiptEx.totalPriceEx = Precio total:
-anonymous.shout.list.label.receiptEx.paidEx = Pagada:
+anonymous.shout.list.label.somp.code = Codigo:
+anonymous.shout.list.label.somp.deadline = Fecha límite:
+anonymous.shout.list.label.somp.budget = Presupuesto:
+anonymous.shout.list.label.somp.important = Importante:
 
 
-anonymous.shout.form.label.receiptEx.referenciaEx = Referencia:
-anonymous.shout.form.label.receiptEx.deadlineEx = DeadlineEx:
-anonymous.shout.form.label.receiptEx.totalPriceEx = Precio total:
-anonymous.shout.form.label.receiptEx.paidEx = Pagada:
+anonymous.shout.form.label.somp.code = Codigo:
+anonymous.shout.form.label.somp.deadline = Fecha límite (al menos 7 días desde hoy):
+anonymous.shout.form.label.somp.budget = Presupuesto:
+anonymous.shout.form.label.somp.important = Importante
 
 
-anonymous.shout.form.error.receiptEx.totalPriceEx = Divisa no permitida, solo se admiten EUR o USD
-anonymous.shout.form.error.receiptEx.totalPriceEx = La fecha de limite debe ser en el futuro
-anonymous.shout.form.error.receiptEx.referenciaExRegExp = La refencia debe encajar con el patrón proporcionado
-anonymous.shout.form.error.receiptEx.referenciaExUnique = No pueden existir dos referencias iguales
+anonymous.shout.form.error.somp.budget = Divisa no permitida, solo se admiten EUR o USD
+anonymous.shout.form.error.somp.deadline = La fecha de limite debe ser al menos una semana más tarde
+anonymous.shout.form.error.somp.codeRegExp = El código debe encajar con el patrón proporcionado
+anonymous.shout.form.error.somp.codeUnique = No pueden existir dos códigos iguales
 
 
 
